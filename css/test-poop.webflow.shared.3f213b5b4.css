@@ -2709,6 +2709,10 @@ a {
   flex: 1;
 }
 
+.template-nav .nav-col:last-child {
+  align-items: stretch;
+}
+
 .template-nav .nav-col.middle {
   overflow: hidden;
   align-items: center;
@@ -2755,19 +2759,20 @@ a {
   justify-content: center;
   align-items: center;
   flex: 1;
-  background-color: hsla(0, 0%, 100%, 0);
+  background-color: hsla(0, 0%, 100%, 0.03);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   color: #fff;
   font-size: .9rem;
   text-decoration: none;
+  transition: background-color .2s ease-out, color .2s ease-out;
 }
 
 .template-nav .nav-button.bg {
   width: 33.3333333%;
   min-width: 33.3333333%;
   flex: 0 auto;
-  background-color: hsla(0, 0%, 100%, 0.06);
+  background-color: hsla(0, 0%, 100%, 0.04);
 }
 
 .template-nav .border-line-top {
@@ -2879,7 +2884,21 @@ a {
 }
 
 .template-nav .xsm-text.fade {
-  color: hsla(0, 0%, 100%, 0.6);
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+/* Hover/active treatments for the right-hand template nav items */
+.template-nav .nav-col:last-child .nav-button:hover,
+.template-nav .nav-col:last-child .nav-button:focus-visible,
+.template-nav .nav-col:last-child .nav-button.is-active {
+  background-color: #fff;
+  color: #111;
+}
+
+.template-nav .nav-col:last-child .nav-button:hover .xsm-text,
+.template-nav .nav-col:last-child .nav-button:focus-visible .xsm-text,
+.template-nav .nav-col:last-child .nav-button.is-active .xsm-text {
+  color: #111;
 }
 
 .template-nav .bg-whipe {
@@ -2969,9 +2988,14 @@ a {
 }
 
 .template-nav .size-two {
+  display: flex;
   width: 33.3333333%;
   min-width: 33.3333333%;
   flex: 0 auto;
+}
+
+.template-nav .size-two .nav-button {
+  flex: 1;
 }
 
 @media screen and (max-width: 767px) {
