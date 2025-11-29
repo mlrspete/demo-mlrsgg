@@ -2794,3 +2794,203 @@ a {
     flex-flow: column;
   }
 }
+
+/* Fates-style navigation bar */
+/* Update these variables to tweak colors and sizing */
+.fates-style-nav {
+  --nav-height: 88px;
+  --nav-padding: 24px;
+  --logo-size: 88px;
+  --about-width: 220px;
+  --discord-width: 140px;
+  --twitter-width: 140px;
+  --launch-width: 260px;
+  --overlay-color: rgba(25, 0, 60, 0.55);
+  --hover-color: #2d1148;
+  --text-color: #ffffff;
+  --index-color: rgba(255, 255, 255, 0.65);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --guide-color: rgba(255, 255, 255, 0.08);
+}
+
+.fates-style-nav__wrapper {
+  position: relative;
+  width: 100%;
+  padding-left: var(--nav-padding);
+  padding-right: var(--nav-padding);
+  box-sizing: border-box;
+}
+
+.fates-style-nav__grid,
+.fates-style-nav__guides {
+  display: grid;
+  grid-template-columns: var(--logo-size) 1fr var(--about-width) var(--discord-width) var(--twitter-width) var(--launch-width);
+  height: var(--nav-height);
+  width: 100%;
+  align-items: stretch;
+}
+
+.fates-style-nav__grid {
+  position: relative;
+  z-index: 2;
+}
+
+.fates-style-nav__guides {
+  position: absolute;
+  inset: -180px var(--nav-padding) -260px var(--nav-padding);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fates-style-nav__guides span {
+  justify-self: start;
+  width: 1px;
+  height: 100%;
+  background: var(--guide-color);
+}
+
+.fates-style-nav__guides span:nth-child(1) {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.fates-style-nav__guides span:nth-child(2) {
+  grid-column: 1;
+  justify-self: end;
+}
+
+.fates-style-nav__guides span:nth-child(3) {
+  grid-column: 2;
+  justify-self: end;
+}
+
+.fates-style-nav__guides span:nth-child(4) {
+  grid-column: 3;
+  justify-self: end;
+}
+
+.fates-style-nav__guides span:nth-child(5) {
+  grid-column: 4;
+  justify-self: end;
+}
+
+.fates-style-nav__guides span:nth-child(6) {
+  grid-column: 5;
+  justify-self: end;
+}
+
+.fates-style-nav__gradient {
+  background: linear-gradient(90deg, rgba(60, 35, 92, 0.85) 0%, rgba(165, 52, 255, 0.85) 50%, rgba(60, 35, 92, 0.85) 100%);
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 14px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Orbitron", "Inter", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.fates-style-nav__logo {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+}
+
+.nav-item__label--logo {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.nav-item--panel {
+  background: var(--overlay-color);
+  color: var(--text-color);
+  border-left: 1px solid var(--border-color);
+}
+
+.nav-item__label {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-item__index {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--index-color);
+}
+
+.nav-item--panel:hover,
+.nav-item--panel:focus-visible,
+.nav-item--panel.is-active,
+.fates-style-nav__logo:hover,
+.fates-style-nav__logo:focus-visible,
+.fates-style-nav__logo.is-active {
+  background: #ffffff;
+  color: var(--hover-color);
+  outline: none;
+}
+
+.nav-item--panel:hover .nav-item__index,
+.nav-item--panel:focus-visible .nav-item__index,
+.nav-item--panel.is-active .nav-item__index {
+  color: var(--hover-color);
+}
+
+.nav-item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: -4px;
+}
+
+/* Swap text placeholders with icons here */
+.nav-item--about .nav-item__label,
+.nav-item--discord .nav-item__label,
+.nav-item--twitter .nav-item__label,
+.nav-item--launch .nav-item__label {
+  text-align: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .fates-style-nav__grid,
+  .fates-style-nav__guides {
+    grid-template-columns: var(--logo-size) 1fr minmax(180px, var(--about-width)) minmax(120px, var(--discord-width)) minmax(120px, var(--twitter-width)) minmax(200px, var(--launch-width));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fates-style-nav {
+    --nav-height: 72px;
+    --logo-size: 72px;
+    --about-width: 190px;
+    --discord-width: 120px;
+    --twitter-width: 120px;
+    --launch-width: 220px;
+  }
+
+  .nav-item {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-item__label--logo {
+    font-size: 10px;
+  }
+
+  .nav-item__index {
+    bottom: 6px;
+    font-size: 10px;
+  }
+}
