@@ -2,8 +2,10 @@
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     var nav = document.querySelector('.template-nav');
-    if (nav && !nav.style.opacity) {
-      nav.style.opacity = '1';
+    if (nav) {
+      requestAnimationFrame(function () {
+        nav.classList.add('is-visible');
+      });
     }
 
     var soundIcon = document.querySelector('.template-nav .sound-icon');
