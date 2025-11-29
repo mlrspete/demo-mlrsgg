@@ -2887,18 +2887,52 @@ a {
   color: hsla(0, 0%, 100%, 0.8);
 }
 
+/* Right-hand template nav buttons: default frosted glass styling */
+.template-nav .nav-col:last-child .nav-button {
+  background-color: rgba(10, 10, 10, 0.25);
+  background-image: none;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #fff;
+}
+
+.template-nav .nav-col:last-child .nav-button .xsm-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.template-nav .nav-col:last-child .nav-button .bg-whipe {
+  background-color: transparent;
+  mix-blend-mode: normal;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+
+.template-nav .nav-col:last-child .nav-button img {
+  filter: none;
+  transition: filter .2s ease-out;
+}
+
 /* Hover/active treatments for the right-hand template nav items */
 .template-nav .nav-col:last-child .nav-button:hover,
 .template-nav .nav-col:last-child .nav-button:focus-visible,
 .template-nav .nav-col:last-child .nav-button.is-active {
   background-color: #fff;
   color: #111;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .template-nav .nav-col:last-child .nav-button:hover .xsm-text,
 .template-nav .nav-col:last-child .nav-button:focus-visible .xsm-text,
 .template-nav .nav-col:last-child .nav-button.is-active .xsm-text {
   color: #111;
+}
+
+.template-nav .nav-col:last-child .nav-button:hover img,
+.template-nav .nav-col:last-child .nav-button:focus-visible img,
+.template-nav .nav-col:last-child .nav-button.is-active img {
+  filter: invert(1);
 }
 
 .template-nav .bg-whipe {
