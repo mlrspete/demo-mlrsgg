@@ -3188,6 +3188,21 @@ a {
 }
 
 /* === MLRS CARD VARIATIONS === */
+.mlrs-server-card-wrapper {
+  perspective: 1200px;
+}
+
+.mlrs-server-card {
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  will-change: transform;
+  transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+}
+
+.mlrs-server-card:hover {
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
 .mlrs-card {
   --panel-glow: rgba(10, 14, 28, 0.28);
   --panel-inner-1: rgba(18, 24, 40, 0.6);
