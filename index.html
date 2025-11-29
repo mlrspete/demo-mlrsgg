@@ -1,11 +1,131 @@
-<!DOCTYPE html><!-- Handled by Exflow.site --><html data-wf-page="69269565523843e62acde5f7" data-wf-site="69269564523843e62acde587" data-wf-status="1"><head><meta charset="utf-8"/><title>test poop</title><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Webflow" name="generator"/><link href="css/test-poop.webflow.shared.3f213b5b4.css" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Roboto Mono:300,regular,700","Rubik Mono One:regular","Inter:regular,600,800"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="images/favicon.png" rel="shortcut icon" type="image/x-icon"/><link href="images/app-icon.png" rel="apple-touch-icon"/></head><body class="body"><div class="css w-embed"><style>
-	.cursor{
-  	pointer-events: none;
+<!DOCTYPE html><!-- Handled by Exflow.site --><html data-wf-page="69269565523843e62acde5f7" data-wf-site="69269564523843e62acde587" data-wf-status="1"><head><meta charset="utf-8"/><title>test poop</title><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Webflow" name="generator"/><link href="css/test-poop.webflow.shared.3f213b5b4.css" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Roboto Mono:300,regular,700","Rubik Mono One:regular","Inter:regular,600,800","Orbitron:400,700"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="images/favicon.png" rel="shortcut icon" type="image/x-icon"/><link href="images/app-icon.png" rel="apple-touch-icon"/><style>
+  .fates-style-nav-wrapper {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    pointer-events: none;
+    width: min(1200px, calc(100% - 48px));
   }
-	.nav__link:focus{
-  	outline: none;
+
+  .fates-style-nav {
+    display: grid;
+    grid-template-columns: 88px 1fr 220px 140px 140px 260px;
+    align-items: stretch;
+    width: 100%;
+    height: 88px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(
+      90deg,
+      rgba(40, 18, 70, 0.76),
+      rgba(170, 60, 255, 0.9),
+      rgba(40, 18, 70, 0.76)
+    );
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    pointer-events: auto;
   }
-</style></div><div class="cursor"><div class="cursor__dot"></div><div class="cursor__line-vertical"></div><div class="cursor__line-horizontal"></div></div><div class="wrapper"><div class="bg"><div class="bg__gradient"></div></div><div class="content"><div class="nav"><a href="#" class="nav__link w-inline-block"><div class="nav__link-inner"><em>ones</em></div></a><a href="#" class="nav__link w-inline-block"><div class="nav__link-inner">shop</div></a><a href="#" class="nav__link w-inline-block"><div>discord</div></a></div><a href="https://www.elyagol.com/" class="card-raound w-inline-block"><div class="content-wrapper"><div class="icons"><div class="pic-wrapper"><div class="pic-div shadow"></div><div class="pic-div"><img sizes="90vw" srcset="images/me-20-d7-90-d7-a0-d7-99-20.webp 500w, images/me-20-d7-90-d7-a0-d7-99-20.webp 800w, images/me-20-d7-90-d7-a0-d7-99-20.webp 1056w" alt="" src="images/me-20-d7-90-d7-a0-d7-99-20.webp" loading="lazy" class="image"/></div></div></div><div class="text-wrapper"><div class="big-text">Elyakim Goldfus</div><div class="med-text">UX/UI Designer &amp; Webflow developer</div><div class="small-text">Freelance and open to work.</div></div><div class="flex-h"><div class="med-text">Click to say Hello</div><img loading="lazy" src="images/cta-arrow.svg" alt=""/></div></div></a></div></div><script src="js/jquery.js?site=69269564523843e62acde587" type="text/javascript"  ></script><script src="js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script><script src="js/webflow.schunk.2dd776d0b4b76731.js" type="text/javascript"></script><script src="js/webflow-script.js" type="text/javascript"></script><script>
+
+  .fates-style-nav__logo {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    position: relative;
+  }
+
+  .fates-style-nav__gradient {
+    background: radial-gradient(circle at center, rgba(200, 100, 255, 0.45) 0%, transparent 55%);
+  }
+
+  .fates-style-nav__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Orbitron", system-ui, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+    background: transparent;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  }
+
+  .fates-style-nav__label {
+    pointer-events: none;
+  }
+
+  .fates-style-nav__index {
+    position: absolute;
+    left: 10px;
+    bottom: 6px;
+    font-size: 11px;
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  .fates-style-nav__logo:hover,
+  .fates-style-nav__logo:focus-visible,
+  .fates-style-nav__item:hover,
+  .fates-style-nav__item:focus-visible,
+  .fates-style-nav__item.is-active {
+    background-color: #ffffff;
+    color: #2d1148;
+  }
+
+  .fates-style-nav__item:hover .fates-style-nav__index,
+  .fates-style-nav__item:focus-visible .fates-style-nav__index,
+  .fates-style-nav__item.is-active .fates-style-nav__index {
+    color: #2d1148;
+    opacity: 1;
+  }
+
+  .fates-style-nav__guides {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 320px;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 88px 1fr 220px 140px 140px 260px;
+    pointer-events: none;
+    z-index: 9998;
+  }
+
+  .fates-style-nav__guides span {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 1024px) {
+    .fates-style-nav {
+      grid-template-columns: 72px 1fr minmax(160px, 1fr) repeat(2, minmax(120px, 1fr)) minmax(200px, 1.4fr);
+      height: 72px;
+    }
+
+    .fates-style-nav__label {
+      font-size: 12px;
+    }
+  }
+</style></head><body class="body"><div class="css w-embed"><style>
+        .cursor{
+        pointer-events: none;
+  }
+        .nav__link:focus{
+        outline: none;
+  }
+</style></div><div class="fates-style-nav-wrapper"><div class="fates-style-nav__guides"><span></span><span></span><span></span><span></span><span></span></div><nav class="fates-style-nav" role="navigation" aria-label="Main"><a href="/" class="fates-style-nav__logo"><span>LOGO</span></a><div class="fates-style-nav__gradient"></div><a href="#about" class="fates-style-nav__item fates-style-nav__item--about is-active"><span class="fates-style-nav__label">ABOUT</span><span class="fates-style-nav__index">001</span></a><a href="https://discord.example" class="fates-style-nav__item fates-style-nav__item--discord"><span class="fates-style-nav__label">DISCORD</span><span class="fates-style-nav__index">002</span></a><a href="https://twitter.example" class="fates-style-nav__item fates-style-nav__item--twitter"><span class="fates-style-nav__label">TWITTER</span><span class="fates-style-nav__index">003</span></a><a href="#launch" class="fates-style-nav__item fates-style-nav__item--launch"><span class="fates-style-nav__label">LAUNCH EXODUS</span><span class="fates-style-nav__index">004</span></a></nav></div><div class="cursor"><div class="cursor__dot"></div><div class="cursor__line-vertical"></div><div class="cursor__line-horizontal"></div></div><div class="wrapper"><div class="bg"><div class="bg__gradient"></div></div><div class="content"><div class="nav"><a href="#" class="nav__link w-inline-block"><div class="nav__link-inner"><em>ones</em></div></a><a href="#" class="nav__link w-inline-block"><div class="nav__link-inner">shop</div></a><a href="#" class="nav__link w-inline-block"><div>discord</div></a></div><a href="https://www.elyagol.com/" class="card-raound w-inline-block"><div class="content-wrapper"><div class="icons"><div class="pic-wrapper"><div class="pic-div shadow"></div><div class="pic-div"><img sizes="90vw" srcset="images/me-20-d7-90-d7-a0-d7-99-20.webp 500w, images/me-20-d7-90-d7-a0-d7-99-20.webp 800w, images/me-20-d7-90-d7-a0-d7-99-20.webp 1056w" alt="" src="images/me-20-d7-90-d7-a0-d7-99-20.webp" loading="lazy" class="image"/></div></div></div><div class="text-wrapper"><div class="big-text">Elyakim Goldfus</div><div class="med-text">UX/UI Designer &amp; Webflow developer</div><div class="small-text">Freelance and open to work.</div></div><div class="flex-h"><div class="med-text">Click to say Hello</div><img loading="lazy" src="images/cta-arrow.svg" alt=""/></div></div></a></div></div><script src="js/jquery.js?site=69269564523843e62acde587" type="text/javascript"  ></script><script src="js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script><script src="js/webflow.schunk.2dd776d0b4b76731.js" type="text/javascript"></script><script src="js/webflow-script.js" type="text/javascript"></script><script>
 	$(document).ready(function(){
   	$('.nav__link:first-child').focus();
   });
