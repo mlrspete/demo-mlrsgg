@@ -81,4 +81,33 @@ async function fetchServerStatus() {
 document.addEventListener('DOMContentLoaded', () => {
   fetchServerStatus();
   setInterval(fetchServerStatus, SERVER_REFRESH_INTERVAL);
+
+  const card = document.querySelector('.mlrs-server-card');
+  if (card) {
+    const parent = card.parentElement;
+    if (parent && !parent.classList.contains('mlrs-server-card-wrapper')) {
+      parent.classList.add('mlrs-server-card-wrapper');
+    }
+
+    const maxRotate = 12;
+
+    const handleMove = (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const midX = rect.width / 2;
+      const midY = rect.height / 2;
+      const rotateY = ((x - midX) / midX) * maxRotate * -1;
+      const rotateX = ((y - midY) / midY) * maxRotate;
+      card.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateZ(0)`;
+    };
+
+    const resetTilt = () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0)';
+    };
+
+    card.addEventListener('mousemove', handleMove);
+    card.addEventListener('mouseenter', handleMove);
+    card.addEventListener('mouseleave', resetTilt);
+  }
 });
