@@ -4272,6 +4272,7 @@ html.nav-intro-preload .template-nav .sound {
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 
 .snap-footer-nav a {
