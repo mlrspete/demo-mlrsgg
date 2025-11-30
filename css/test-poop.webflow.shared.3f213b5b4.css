@@ -3614,20 +3614,18 @@ a {
   right: auto;
   bottom: auto;
   z-index: 999;
-  display: flex;
+  display: none;
   flex-direction: row;
   width: 100%;
   height: 3.8rem;
   margin-top: 1.6rem;
   justify-content: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .6s ease, transform .6s ease;
+  opacity: 1;
+  transition: opacity 1s ease .15s;
 }
 
 .template-nav.is-visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .template-nav .container-lg {
@@ -3657,6 +3655,17 @@ a {
   align-items: center;
 }
 
+/* Intro state: frost panel starts off-screen to the left */
+.template-nav.nav-intro-ready .frost.ab-bl {
+  transform: translateX(-100%);
+  transition: transform 3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+/* End state: frost fully slid into place */
+.template-nav.nav-intro-play .frost.ab-bl {
+  transform: translateX(0);
+}
+
 .template-nav .frost {
   z-index: 1;
   width: 100%;
@@ -3666,6 +3675,8 @@ a {
   backdrop-filter: blur(8px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transform: translateX(0);
+  transition: transform 3s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 .template-nav .ab-bl {
@@ -3675,6 +3686,53 @@ a {
   right: auto;
   bottom: 0%;
 }
+
+/* Intro animation staging */
+html.nav-intro-preload .template-nav {
+  opacity: 0;
+  display: none;
+}
+
+html.nav-intro-preload.nav-intro-playing .template-nav {
+  display: flex;
+}
+
+html.nav-intro-preload .template-nav .frost.ab-bl {
+  transform: translateX(-100%);
+}
+
+html.nav-intro-preload .template-nav .border-line-top.intro,
+html.nav-intro-preload .template-nav .border-line-btm-right.intro {
+  width: 0;
+}
+
+html.nav-intro-preload .template-nav .border-line-right {
+  height: 0;
+}
+
+html.nav-intro-preload .template-nav .border-line-right.strong {
+  display: none;
+  height: 0;
+}
+
+html.nav-intro-lines .template-nav .border-line-right.strong {
+  display: block;
+}
+
+html.nav-intro-preload .template-nav .nav-button {
+  opacity: 0;
+}
+
+html.nav-intro-preload .template-nav .sound {
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* Timing notes:
+ * - Frost panel slides in over 3s (easeInOutExpo-inspired cubic).
+ * - Top/bottom lines draw after 1s over ~0.9s; vertical line draws over 4s.
+ * - Nav buttons fade in after 1.8s over 2s; sound button pops at 2.2s over 1s.
+ */
 
 .template-nav .logo {
   position: relative;
@@ -3704,7 +3762,17 @@ a {
   color: #fff;
   font-size: .9rem;
   text-decoration: none;
-  transition: background-color .2s ease-out, color .2s ease-out;
+  transition: opacity 2s ease 1.8s, background-color .2s ease-out, color .2s ease-out;
+}
+
+/* Step 4: nav buttons fade in after structure is drawn */
+.template-nav.nav-intro-ready .nav-button {
+  opacity: 0;
+  transition: opacity 2s ease 1.8s, background-color .2s ease-out, color .2s ease-out;
+}
+
+.template-nav.nav-intro-play .nav-button {
+  opacity: 1;
 }
 
 .template-nav .nav-button.bg {
@@ -3724,6 +3792,17 @@ a {
   width: 100%;
   height: 1px;
   background-color: hsla(0, 0%, 100%, 0.1);
+  transition: width .9s ease 1s;
+}
+
+/* Step 3a: draw top line from 0% to 100% */
+.template-nav.nav-intro-ready .border-line-top.intro {
+  width: 0;
+  transition: width .8s ease 1s;
+}
+
+.template-nav.nav-intro-play .border-line-top.intro {
+  width: 100%;
 }
 
 .template-nav .border-line-right {
@@ -3737,10 +3816,30 @@ a {
   width: 1px;
   height: 100%;
   background-color: hsla(0, 0%, 100%, 0.1);
+  transition: height 4s cubic-bezier(0.85, 0, 0.15, 1) 1s;
+}
+
+/* Step 3c: draw vertical line with long expo ease */
+.template-nav.nav-intro-ready .border-line-right.intro {
+  height: 0;
+  transition: height 4s cubic-bezier(0.87, 0, 0.13, 1) 1s;
+}
+
+.template-nav.nav-intro-play .border-line-right.intro {
+  height: 100%;
 }
 
 .template-nav .border-line-right.strong {
   background-color: hsla(0, 0%, 100%, 0.15);
+  transition: height 4s cubic-bezier(0.85, 0, 0.15, 1) 1s;
+}
+
+.template-nav.nav-intro-ready .border-line-right.intro.strong {
+  display: none;
+}
+
+.template-nav.nav-intro-play .border-line-right.intro.strong {
+  display: block;
 }
 
 .template-nav .border-line-right.hide {
@@ -3761,6 +3860,17 @@ a {
   width: 100%;
   height: 1px;
   background-color: hsla(0, 0%, 100%, 0.06);
+  transition: width .9s ease 1.1s;
+}
+
+/* Step 3b: draw bottom line from 0% to 100% */
+.template-nav.nav-intro-ready .border-line-btm-right.intro {
+  width: 0;
+  transition: width .9s ease 1.05s;
+}
+
+.template-nav.nav-intro-play .border-line-btm-right.intro {
+  width: 100%;
 }
 
 .template-nav .border-line-btm-right.strong {
@@ -3947,9 +4057,21 @@ a {
   align-items: center;
   border: 1px solid hsla(0, 0%, 100%, 0.2);
   border-radius: 100%;
-  transition: background-color 200ms ease;
+  transition: transform 1s cubic-bezier(0.17, 0.84, 0.44, 1) 2.2s, opacity .6s ease 2.2s, background-color 200ms ease;
   color: #a1705b;
   cursor: pointer;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Step 5: sound button pop-in */
+.template-nav.nav-intro-ready .sound {
+  transform: scale(0);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1) 2.2s, background-color 200ms ease;
+}
+
+.template-nav.nav-intro-play .sound {
+  transform: scale(1);
 }
 
 .template-nav .sound:hover {
@@ -3969,6 +4091,86 @@ a {
 
 .template-nav .size-two .nav-button {
   flex: 1;
+}
+
+/* Nav intro animation states (runs once per page load)
+   0s: nav shown in layout but invisible, frost offset left, lines collapsed, sound scaled down.
+   0–3s: frost slides in with expo easing while nav fades in after 0.15s.
+   1s: top/bottom lines draw across; vertical line draws over 4s and reveals the strong variant.
+   1.8s: nav buttons fade in; 2.2s: sound button pops in with expo-out feel. */
+.nav-intro-enabled .template-nav {
+  opacity: 0;
+  display: none;
+  transform: translateY(20px);
+}
+
+.nav-intro-start .template-nav {
+  display: flex;
+}
+
+.nav-intro-play .template-nav {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease 0.15s, transform 1s ease 0.15s;
+}
+
+.nav-intro-start .template-nav .frost.ab-bl {
+  transform: translateX(-105%);
+}
+
+.nav-intro-play .template-nav .frost.ab-bl {
+  transform: translateX(0);
+  transition: transform 3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.nav-intro-start .template-nav .border-line-top.intro,
+.nav-intro-start .template-nav .border-line-btm-right.intro {
+  width: 0;
+}
+
+.nav-intro-play .template-nav .border-line-top.intro {
+  width: 100%;
+  transition: width 0.9s ease 1s;
+}
+
+.nav-intro-play .template-nav .border-line-btm-right.intro {
+  width: 100%;
+  transition: width 0.9s ease 1.05s;
+}
+
+.nav-intro-start .template-nav .nav-col > .border-line-right.intro {
+  height: 0;
+}
+
+.nav-intro-play .template-nav .nav-col > .border-line-right.intro {
+  height: 100%;
+  transition: height 4s cubic-bezier(0.83, 0, 0.17, 1) 1s;
+}
+
+.nav-intro-start .template-nav .nav-col > .border-line-right.strong {
+  display: none;
+}
+
+.nav-intro-play .template-nav .nav-col > .border-line-right.strong {
+  display: block;
+}
+
+.nav-intro-start .template-nav .nav-button {
+  opacity: 0;
+}
+
+.nav-intro-play .template-nav .nav-button {
+  opacity: 1;
+  transition: opacity 2s ease 1.8s;
+}
+
+.nav-intro-start .template-nav .sound {
+  transform: scale(0);
+}
+
+.nav-intro-play .template-nav .sound {
+  transform: scale(1);
+  transition: transform 1s cubic-bezier(0.17, 1, 0.34, 1) 2.2s;
 }
 
 @media screen and (max-width: 767px) {
