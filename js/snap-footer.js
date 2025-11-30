@@ -1,6 +1,8 @@
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('.site-header .template-nav');
+    const header =
+      document.querySelector('.site-header') || document.querySelector('header');
+    const nav = header?.querySelector('.template-nav');
     const footer = document.querySelector('.snap-footer');
 
     if (!header || !footer) {
@@ -13,11 +15,15 @@
     const isSnapDisabled = () => window.innerWidth < 768;
 
     function getHeaderHeight() {
-      return header.getBoundingClientRect().height;
+      const target = nav || header;
+      return target ? target.getBoundingClientRect().height : 0;
     }
 
     function updateSnapFooterHeight() {
       const headerHeight = getHeaderHeight();
+
+      if (!headerHeight) return;
+
       footer.style.height = `${headerHeight}px`;
       root.style.setProperty('--snap-footer-height', `${headerHeight}px`);
     }
@@ -35,6 +41,8 @@
 
       const headerHeight = getHeaderHeight();
       const y = window.scrollY;
+
+      if (!headerHeight) return;
 
       if (y >= 0 && y <= headerHeight) {
         const threshold = headerHeight / 4;
