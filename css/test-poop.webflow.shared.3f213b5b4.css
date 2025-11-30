@@ -4269,11 +4269,13 @@ html.nav-intro-preload .template-nav .sound {
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 
 .snap-footer-nav a {
   color: #000;
   font-weight: 600;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 767px) {
