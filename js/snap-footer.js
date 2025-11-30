@@ -1,6 +1,12 @@
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('.site-header');
+    // Prefer the explicit template nav, but gracefully fall back to other
+    // header selectors so all variations stay in sync.
+    const header =
+      document.querySelector('.site-header .template-nav') ||
+      document.querySelector('.nav') ||
+      document.querySelector('.site-header');
+
     const footer = document.querySelector('.snap-footer');
 
     // Exit early if the required structural elements are missing.
@@ -9,6 +15,9 @@
     }
 
     const root = document.documentElement;
+    const reduceMotionQuery = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    );
     let isSnapping = false;
 
     const isSnapDisabled = () => window.innerWidth < 768;
@@ -25,10 +34,14 @@
 
     function snapTo(position) {
       isSnapping = true;
-      window.scrollTo({ top: position, behavior: 'smooth' });
+      const smoothBehavior = reduceMotionQuery.matches ? 'auto' : 'smooth';
+
+      window.scrollTo({ top: position, behavior: smoothBehavior });
+
+      const resetDelay = reduceMotionQuery.matches ? 0 : 500;
       setTimeout(() => {
         isSnapping = false;
-      }, 500);
+      }, resetDelay);
     }
 
     function handleScroll() {
