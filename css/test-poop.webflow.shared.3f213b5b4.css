@@ -4228,6 +4228,7 @@ html.nav-intro-preload .template-nav .sound {
 
 .hero-section {
   width: 100%;
+  min-height: 100vh;
 }
 
 .snap-footer {

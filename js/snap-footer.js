@@ -1,12 +1,8 @@
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
-    // Prefer the explicit template nav, but gracefully fall back to other
-    // header selectors so all variations stay in sync.
     const header =
-      document.querySelector('.site-header .template-nav') ||
-      document.querySelector('.nav') ||
-      document.querySelector('.site-header');
-
+      document.querySelector('.site-header') || document.querySelector('header');
+    const nav = header?.querySelector('.template-nav');
     const footer = document.querySelector('.snap-footer');
 
     // Exit early if the required structural elements are missing.
@@ -23,11 +19,15 @@
     const isSnapDisabled = () => window.innerWidth < 768;
 
     function getHeaderHeight() {
-      return header.getBoundingClientRect().height;
+      const target = nav || header;
+      return target ? target.getBoundingClientRect().height : 0;
     }
 
     function updateSnapFooterHeight() {
       const headerHeight = getHeaderHeight();
+
+      if (!headerHeight) return;
+
       footer.style.height = `${headerHeight}px`;
       root.style.setProperty('--snap-footer-height', `${headerHeight}px`);
     }
@@ -50,7 +50,8 @@
       const headerHeight = getHeaderHeight();
       const y = window.scrollY;
 
-      // Only manage scroll snapping while the user is within the header-height range.
+      if (!headerHeight) return;
+
       if (y >= 0 && y <= headerHeight) {
         const threshold = headerHeight / 4;
 
