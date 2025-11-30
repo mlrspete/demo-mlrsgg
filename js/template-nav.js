@@ -1,22 +1,28 @@
 // Template navigation interactions
 (function () {
+  var root = document.documentElement;
+
+  // Ensure the intro class is present early so the nav starts hidden when JS is enabled.
+  if (!root.classList.contains('nav-intro-preload')) {
+    root.classList.add('nav-intro-preload');
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var nav = document.querySelector('.template-nav');
     if (nav) {
-      // Guard so the intro only runs once per page load / mount.
-      if (nav.dataset.introPlayed === 'true') {
-        nav.classList.add('nav-intro-ready', 'nav-intro-play');
-      } else {
-        nav.dataset.introPlayed = 'true';
+      // Step 1: make the nav participate in layout without showing it yet.
+      root.classList.add('nav-intro-playing');
+      nav.style.display = 'flex';
 
-        // Step 0: make nav part of the layout but keep it hidden.
-        nav.classList.add('nav-intro-ready');
+      // Step 2: kick off the staged CSS transitions.
+      requestAnimationFrame(function () {
+        root.classList.remove('nav-intro-preload');
 
-        // Step 1+: kick off CSS-driven animation timeline on the next frame.
-        requestAnimationFrame(function () {
-          nav.classList.add('nav-intro-play');
-        });
-      }
+        // Step 3: reveal the stronger right-hand line once the main draw begins.
+        setTimeout(function () {
+          root.classList.add('nav-intro-lines');
+        }, 1000);
+      });
     }
 
     var soundIcon = document.querySelector('.template-nav .sound-icon');
