@@ -1,10 +1,27 @@
 // Template navigation interactions
 (function () {
+  var root = document.documentElement;
+
+  // Ensure the intro class is present early so the nav starts hidden when JS is enabled.
+  if (!root.classList.contains('nav-intro-preload')) {
+    root.classList.add('nav-intro-preload');
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var nav = document.querySelector('.template-nav');
     if (nav) {
+      // Step 1: make the nav participate in layout without showing it yet.
+      root.classList.add('nav-intro-playing');
+      nav.style.display = 'flex';
+
+      // Step 2: kick off the staged CSS transitions.
       requestAnimationFrame(function () {
-        nav.classList.add('is-visible');
+        root.classList.remove('nav-intro-preload');
+
+        // Step 3: reveal the stronger right-hand line once the main draw begins.
+        setTimeout(function () {
+          root.classList.add('nav-intro-lines');
+        }, 1000);
       });
     }
 
