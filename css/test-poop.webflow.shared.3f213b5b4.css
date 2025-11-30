@@ -3190,6 +3190,11 @@ a {
 /* === MLRS CARD VARIATIONS === */
 .mlrs-server-card-wrapper {
   perspective: 1200px;
+  width: 100%;
+  max-width: 720px;
+  flex: 1 1 640px;
+  display: flex;
+  justify-content: center;
 }
 
 .mlrs-server-card {
@@ -3197,6 +3202,9 @@ a {
   transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
   will-change: transform;
   transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+  width: 100%;
+  max-width: 720px;
+  min-height: 220px;
 }
 
 .mlrs-server-card:hover {
@@ -3215,7 +3223,8 @@ a {
   --text-dim: rgba(244, 248, 255, 0.72);
   --text-strong: #f7fbff;
   width: 100%;
-  max-width: 960px;
+  max-width: 720px;
+  min-height: 220px;
   display: block;
   text-decoration: none;
 }
