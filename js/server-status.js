@@ -82,6 +82,29 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchServerStatus();
   setInterval(fetchServerStatus, SERVER_REFRESH_INTERVAL);
 
+  const syncCardToNavTrack = () => {
+    const cardWrapper = document.querySelector('.mlrs-server-card-wrapper');
+    const heroRight = cardWrapper?.parentElement;
+    const navAbout = document.querySelector('.template-nav .nav-button.bg');
+    const navTwitter = document.querySelector('.template-nav .size-two .nav-button:last-child');
+
+    if (!cardWrapper || !heroRight || !navAbout || !navTwitter) {
+      return;
+    }
+
+    const aboutRect = navAbout.getBoundingClientRect();
+    const twitterRect = navTwitter.getBoundingClientRect();
+    const heroRect = heroRight.getBoundingClientRect();
+
+    const width = Math.max(twitterRect.right - aboutRect.left, 0);
+    const offset = aboutRect.left - heroRect.left;
+
+    if (width > 0) {
+      cardWrapper.style.setProperty('--mlrs-track-width', `${width}px`);
+      cardWrapper.style.setProperty('--mlrs-track-offset', `${offset}px`);
+    }
+  };
+
   const card = document.querySelector('.mlrs-server-card');
   if (card) {
     const parent = card.parentElement;
@@ -90,6 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const maxRotate = 12;
+
+    syncCardToNavTrack();
+    window.addEventListener('resize', syncCardToNavTrack);
 
     const handleMove = (event) => {
       const rect = card.getBoundingClientRect();
