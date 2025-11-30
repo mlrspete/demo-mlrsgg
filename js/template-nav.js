@@ -3,9 +3,20 @@
   document.addEventListener('DOMContentLoaded', function () {
     var nav = document.querySelector('.template-nav');
     if (nav) {
-      requestAnimationFrame(function () {
-        nav.classList.add('is-visible');
-      });
+      // Guard so the intro only runs once per page load / mount.
+      if (nav.dataset.introPlayed === 'true') {
+        nav.classList.add('nav-intro-ready', 'nav-intro-play');
+      } else {
+        nav.dataset.introPlayed = 'true';
+
+        // Step 0: make nav part of the layout but keep it hidden.
+        nav.classList.add('nav-intro-ready');
+
+        // Step 1+: kick off CSS-driven animation timeline on the next frame.
+        requestAnimationFrame(function () {
+          nav.classList.add('nav-intro-play');
+        });
+      }
     }
 
     var soundIcon = document.querySelector('.template-nav .sound-icon');
