@@ -1,28 +1,36 @@
-// Template navigation interactions
+// Template navigation interactions and intro sequencing
 (function () {
-  var root = document.documentElement;
-
-  // Ensure the intro class is present early so the nav starts hidden when JS is enabled.
-  if (!root.classList.contains('nav-intro-preload')) {
-    root.classList.add('nav-intro-preload');
-  }
+  var introHasRun = false;
 
   document.addEventListener('DOMContentLoaded', function () {
     var nav = document.querySelector('.template-nav');
-    if (nav) {
-      // Step 1: make the nav participate in layout without showing it yet.
-      root.classList.add('nav-intro-playing');
+    var root = document.documentElement;
+
+    if (nav && !introHasRun) {
+      introHasRun = true;
+
+      // Ensure the nav participates in layout while keeping the intro hidden state applied by CSS.
       nav.style.display = 'flex';
+      root.classList.add('nav-intro-start');
 
-      // Step 2: kick off the staged CSS transitions.
+      // Kick off the timeline on the next frame so all initial states are applied first.
       requestAnimationFrame(function () {
-        root.classList.remove('nav-intro-preload');
-
-        // Step 3: reveal the stronger right-hand line once the main draw begins.
-        setTimeout(function () {
-          root.classList.add('nav-intro-lines');
-        }, 1000);
+        root.classList.add('nav-intro-play');
       });
+
+      var cleanup = function () {
+        root.classList.remove('nav-intro-enabled', 'nav-intro-start', 'nav-intro-play');
+        nav.classList.add('is-visible');
+      };
+
+      // Allow all steps (frost slide, lines, buttons, pop) to finish before cleaning up helper classes.
+      setTimeout(cleanup, 5200);
+
+      if (window.__navIntroFallback) {
+        clearTimeout(window.__navIntroFallback);
+      }
+    } else if (nav) {
+      nav.classList.add('is-visible');
     }
 
     var soundIcon = document.querySelector('.template-nav .sound-icon');

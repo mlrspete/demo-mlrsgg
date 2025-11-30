@@ -4091,6 +4091,86 @@ html.nav-intro-preload .template-nav .sound {
   flex: 1;
 }
 
+/* Nav intro animation states (runs once per page load)
+   0s: nav shown in layout but invisible, frost offset left, lines collapsed, sound scaled down.
+   0–3s: frost slides in with expo easing while nav fades in after 0.15s.
+   1s: top/bottom lines draw across; vertical line draws over 4s and reveals the strong variant.
+   1.8s: nav buttons fade in; 2.2s: sound button pops in with expo-out feel. */
+.nav-intro-enabled .template-nav {
+  opacity: 0;
+  display: none;
+  transform: translateY(20px);
+}
+
+.nav-intro-start .template-nav {
+  display: flex;
+}
+
+.nav-intro-play .template-nav {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease 0.15s, transform 1s ease 0.15s;
+}
+
+.nav-intro-start .template-nav .frost.ab-bl {
+  transform: translateX(-105%);
+}
+
+.nav-intro-play .template-nav .frost.ab-bl {
+  transform: translateX(0);
+  transition: transform 3s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.nav-intro-start .template-nav .border-line-top.intro,
+.nav-intro-start .template-nav .border-line-btm-right.intro {
+  width: 0;
+}
+
+.nav-intro-play .template-nav .border-line-top.intro {
+  width: 100%;
+  transition: width 0.9s ease 1s;
+}
+
+.nav-intro-play .template-nav .border-line-btm-right.intro {
+  width: 100%;
+  transition: width 0.9s ease 1.05s;
+}
+
+.nav-intro-start .template-nav .nav-col > .border-line-right.intro {
+  height: 0;
+}
+
+.nav-intro-play .template-nav .nav-col > .border-line-right.intro {
+  height: 100%;
+  transition: height 4s cubic-bezier(0.83, 0, 0.17, 1) 1s;
+}
+
+.nav-intro-start .template-nav .nav-col > .border-line-right.strong {
+  display: none;
+}
+
+.nav-intro-play .template-nav .nav-col > .border-line-right.strong {
+  display: block;
+}
+
+.nav-intro-start .template-nav .nav-button {
+  opacity: 0;
+}
+
+.nav-intro-play .template-nav .nav-button {
+  opacity: 1;
+  transition: opacity 2s ease 1.8s;
+}
+
+.nav-intro-start .template-nav .sound {
+  transform: scale(0);
+}
+
+.nav-intro-play .template-nav .sound {
+  transform: scale(1);
+  transition: transform 1s cubic-bezier(0.17, 1, 0.34, 1) 2.2s;
+}
+
 @media screen and (max-width: 767px) {
   .template-nav {
     height: 7rem;
