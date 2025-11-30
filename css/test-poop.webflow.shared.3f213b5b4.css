@@ -3234,12 +3234,12 @@ a {
 /* === MLRS CARD VARIATIONS === */
 .mlrs-server-card-wrapper {
   perspective: 1200px;
-  width: 100%;
-  max-width: 700px;
+  width: var(--mlrs-track-width, 100%);
+  max-width: var(--mlrs-track-width, 700px);
   flex: 0 0 auto;
   display: flex;
   justify-content: flex-end;
-  margin-left: auto;
+  margin-left: var(--mlrs-track-offset, auto);
 }
 
 .mlrs-server-card {
@@ -3250,6 +3250,7 @@ a {
   width: 100%;
   max-width: 700px;
   min-height: 220px;
+  border-radius: 0;
 }
 
 .mlrs-server-card:hover {
@@ -3277,7 +3278,7 @@ a {
 .mlrs-card-outer {
   background: var(--panel-glow);
   border: 1px solid var(--line-soft);
-  border-radius: 18px;
+  border-radius: 0;
   padding: 20px 24px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
