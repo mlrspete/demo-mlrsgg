@@ -4256,6 +4256,8 @@ html.nav-intro-preload .template-nav .sound {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
 }
 
 .snap-footer-logo img {
@@ -4274,6 +4276,7 @@ html.nav-intro-preload .template-nav .sound {
 .snap-footer-nav a {
   color: #000;
   font-weight: 600;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 767px) {
