@@ -8,6 +8,22 @@ body {
   margin: 0;
 }
 
+@font-face {
+  font-family: "Galantic";
+  src: url("../fonts/Galantic-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Daffiys";
+  src: url("../fonts/Daffiys.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
