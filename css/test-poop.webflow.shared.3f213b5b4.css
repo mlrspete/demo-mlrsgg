@@ -2187,17 +2187,17 @@ a {
 }
 
 .ones-stack {
-  background-color: #0b0d11;
-  background-image: linear-gradient(180deg, #0f131b 0%, #0b0d11 100%);
-  border: 1px solid #0f1220;
+  background-color: transparent;
+  background-image: none;
+  border: none;
   border-radius: 10px;
-  padding: 22px 24px 18px;
+  padding: 18px 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
-  width: min(260px, 32vw);
-  box-shadow: 0 0 0 1px #000;
+  width: min(360px, 80vw);
+  box-shadow: none;
   transition: transform .2s ease, box-shadow .2s ease, filter .2s ease, background-color .2s ease, background-image .2s ease;
 }
 
@@ -2205,7 +2205,8 @@ a {
 .ones-stack-link:focus .ones-stack {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 10px 10px 0 #000, 0 10px 30px #00000080;
-  background-image: linear-gradient(180deg, #0f141e 0%, #0b0d11 100%), url("../images/grunge.png");
+  background-color: transparent;
+  background-image: url("../images/grunge.png");
   background-size: cover;
 }
 
@@ -2217,42 +2218,47 @@ a {
 
 .ones-line--main {
   font-family: "Galantic", "Inter", sans-serif;
-  font-size: clamp(68px, 8vw, 104px);
-  line-height: 1;
-  padding: 8px 18px;
-  border-radius: 8px;
-  color: #69d7ff;
+  font-size: clamp(108px, 10vw, 148px);
+  line-height: .92;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: #00576e;
   text-transform: uppercase;
   display: inline-block;
-  letter-spacing: .12em;
+  letter-spacing: .14em;
   transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s;
 }
 
 .ones-line--league img {
   display: block;
-  width: min(200px, 70vw);
+  width: clamp(170px, 70%, 420px);
   height: auto;
   filter: drop-shadow(0 6px 16px #00000070);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ones-line--subtitle {
   font-family: "Daffiys", "Inter", sans-serif;
-  font-size: clamp(26px, 3vw, 38px);
+  font-size: clamp(30px, 3vw, 42px);
   color: #cfd8e8;
   letter-spacing: .04em;
+  width: clamp(140px, 56%, 340px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav__link {
-  color: #69d7ff;
+  color: #00576e;
   text-transform: uppercase;
   cursor: inherit;
   border-radius: 8px;
   padding-bottom: 0;
   padding-left: 12px;
   padding-right: 12px;
-  font-size: clamp(68px, 8vw, 104px);
-  font-weight: 700;
-  line-height: 1;
+  font-size: clamp(108px, 10vw, 148px);
+  font-weight: 400;
+  line-height: .92;
   text-decoration: none;
   transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s;
   position: relative;
@@ -2265,7 +2271,7 @@ a {
 .ones-stack-link:hover .ones-line--main.nav__link,
 .ones-stack-link:focus .ones-line--main.nav__link {
   color: #050607;
-  background-color: #69d7ff;
+  background-color: #00576e;
   background-image: url("../images/grunge.png");
   background-size: cover;
   padding-left: 20px;
@@ -2277,12 +2283,12 @@ a {
 .nav__link:focus,
 .ones-stack-link:focus .ones-line--main.nav__link {
   color: #050607;
-  background-color: #69d7ff;
+  background-color: #00576e;
   padding-left: 20px;
   padding-right: 24px;
   transform: translate(0, -6px);
   box-shadow: 6px 6px #000;
-  outline: 2px solid #69d7ff;
+  outline: 2px solid #00576e;
   outline-offset: 4px;
 }
 
@@ -2368,7 +2374,7 @@ a {
 .nav {
   z-index: 1;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   margin-bottom: 0;
   padding-left: 0;
@@ -2385,15 +2391,15 @@ a {
 }
 
 .ones-stack {
-  background-color: #05070d;
-  border: 2px solid #0f1624;
+  background-color: transparent;
+  border: none;
   border-radius: 10px;
-  padding: 18px 20px 16px;
+  padding: 18px 16px;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
   display: flex;
-  transition: transform .2s, box-shadow .2s, filter .2s;
+  transition: transform .2s, box-shadow .2s, filter .2s, background-color .2s, background-image .2s;
   transform-origin: center;
 }
 
@@ -2402,6 +2408,9 @@ a {
   transform: translate3d(0, -4px, 0) scale(1.01);
   box-shadow: 10px 10px 0 #000;
   filter: drop-shadow(0 0 12px rgba(28, 196, 247, 0.35));
+  background-color: transparent;
+  background-image: url("../images/grunge.png");
+  background-size: cover;
 }
 
 .ones-line {
@@ -2413,27 +2422,32 @@ a {
 
 .ones-line--main {
   font-family: "Galantic", "Inter", sans-serif;
-  font-size: 120px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  line-height: .95;
-  color: #1cc4f7;
+  font-size: clamp(108px, 10vw, 148px);
+  font-weight: 400;
+  letter-spacing: .14em;
+  line-height: .92;
+  color: #00576e;
 }
 
 .ones-line--league img {
   display: block;
-  max-width: 220px;
-  width: 100%;
+  max-width: 100%;
+  width: clamp(170px, 70%, 420px);
   height: auto;
   filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ones-line--subtitle {
   font-family: "Daffiys", "Inter", sans-serif;
-  font-size: 46px;
+  font-size: clamp(30px, 3vw, 42px);
   line-height: 1;
   letter-spacing: 1px;
   color: #dfe6f1;
+  width: clamp(140px, 56%, 340px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .arrows {
