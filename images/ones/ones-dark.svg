@@ -1,6 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="220" height="120" viewBox="0 0 220 120" role="img" aria-labelledby="title">
-  <title>Ones League Active</title>
-  <rect width="220" height="120" rx="10" fill="#0a1a2b" />
-  <rect x="6" y="6" width="208" height="108" rx="8" fill="#11273c" />
-  <text x="50%" y="52%" fill="#7fd0ff" font-family="'Inter', 'Arial Black', sans-serif" font-size="44" font-weight="800" text-anchor="middle" letter-spacing="6">ONES</text>
+<svg width="220" height="88" viewBox="0 0 220 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="88" rx="6" fill="#0D1B2A" stroke="#55B5FF" stroke-width="4"/>
+  <text x="110" y="56" fill="#55B5FF" font-family="'Inter', 'Rubik Mono One', sans-serif" font-size="40" font-weight="800" text-anchor="middle" letter-spacing="6">ONES</text>
 </svg>

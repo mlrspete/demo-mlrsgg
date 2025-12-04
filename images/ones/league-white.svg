@@ -1,5 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="220" height="60" viewBox="0 0 220 60" role="img" aria-labelledby="title">
-  <title>League</title>
-  <rect width="220" height="60" fill="none" rx="6" />
-  <text x="50%" y="50%" fill="#fff" font-family="'Inter', 'Arial Black', sans-serif" font-size="32" font-weight="800" text-anchor="middle" dominant-baseline="middle" letter-spacing="6">LEAGUE</text>
+<svg width="220" height="62" viewBox="0 0 220 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="62" rx="4" fill="url(#bg)"/>
+  <text x="110" y="40" fill="#FFFFFF" font-family="'Inter', 'Rubik Mono One', sans-serif" font-size="32" font-weight="800" text-anchor="middle" letter-spacing="6">LEAGUE</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="200" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E1118"/>
+      <stop offset="1" stop-color="#121620"/>
+    </linearGradient>
+  </defs>
 </svg>

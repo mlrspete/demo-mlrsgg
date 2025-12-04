@@ -2392,148 +2392,142 @@ a {
   position: relative;
 }
 
-/* Ones League CTA sticker stack - assets live in images/ones. */
+/* Ones League CTA sticker stack. Assets live in images/ones/. Update the link in the hero markup if the league URL changes. */
 .ones-cta {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   position: relative;
-  transform: rotate(-1deg);
+  transform: translateZ(0);
 }
 
 .ones-cta__line {
+  --ones-tilt: 0deg;
   background: none;
   border: none;
   padding: 0;
-  display: block;
-  cursor: pointer;
-  outline: none;
-  transform-origin: center;
+  margin: 0;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   position: relative;
-  transition: transform .18s ease, filter .18s ease;
+  transform: rotate(var(--ones-tilt));
+  transition: transform .2s ease, filter .2s ease, box-shadow .2s ease, opacity .2s ease;
+  cursor: pointer;
 }
 
-.ones-cta__line:focus-visible {
-  outline: 2px solid #4cc2ff;
-  outline-offset: 6px;
+.ones-cta__line img {
+  display: block;
+  height: auto;
+  width: auto;
 }
 
 .ones-cta__line--small {
-  transform: rotate(-2deg);
+  --ones-tilt: -2deg;
 }
 
-.ones-cta__line--small:last-child {
-  transform: rotate(-1deg);
+.ones-cta__line--league {
+  --ones-tilt: -1deg;
 }
 
-.ones-cta__line--small img {
-  display: block;
-  width: 170px;
-  max-width: 70vw;
-  pointer-events: none;
+.ones-cta__line--ones {
+  --ones-tilt: 1deg;
 }
 
 .ones-cta__line--small::after {
   content: "";
-  pointer-events: none;
   position: absolute;
-  inset: -6%;
+  inset: -2px;
+  background-image: var(--ones-noise, url("../images/grunge.png"));
+  background-size: cover;
   opacity: 0;
-  transition: opacity .2s ease;
-  background-image: radial-gradient(rgba(255, 255, 255, .14) 1px, transparent 1px), radial-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px);
-  background-size: 6px 6px, 10px 10px;
   mix-blend-mode: screen;
-  filter: drop-shadow(0 0 10px #0ff5);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  border-radius: 4px;
 }
 
 .ones-cta__line--small:hover,
 .ones-cta__line--small:focus-visible {
-  transform: translateY(-2px) rotate(-2deg);
-}
-
-.ones-cta__line--small:last-child:hover,
-.ones-cta__line--small:last-child:focus-visible {
-  transform: translateY(-2px) rotate(-1deg);
+  transform: rotate(var(--ones-tilt)) translateY(-2px);
 }
 
 .ones-cta__line--small:hover::after,
 .ones-cta__line--small:focus-visible::after {
-  opacity: 1;
+  opacity: .4;
+  transform: translateY(-2px);
 }
 
-.ones-cta__line--ones {
-  transform: rotate(1deg);
-  width: 220px;
-  max-width: 80vw;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 8px 8px #000000bf;
-  background-color: transparent;
-  transition: transform .18s ease, box-shadow .18s ease;
+.ones-cta__line--ones.nav__link {
+  background: none;
+  background-image: none;
+  box-shadow: 0 0 0 transparent;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  color: #000;
 }
 
-.ones-cta__line--ones .ones-cta__ones-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  pointer-events: none;
-  transition: opacity .22s ease;
+.ones-cta__line--ones.nav__link:hover,
+.ones-cta__line--ones.nav__link:focus {
+  background: none;
+  background-image: none;
+  padding: 0;
+  box-shadow: 12px 12px 0 #000;
+  transform: rotate(var(--ones-tilt)) translateY(-8px) scale(1.03);
 }
 
-.ones-cta__line--ones .ones-cta__ones-img--hover {
+.ones-cta__line--ones.nav__link .ones-cta__ones-img-wrap {
+  position: relative;
+  display: inline-flex;
+  transform-origin: center;
+  animation: ones-breathe 4s ease-in-out infinite;
+}
+
+.ones-cta__line--ones.nav__link:hover .ones-cta__ones-img-wrap,
+.ones-cta__line--ones.nav__link:focus .ones-cta__ones-img-wrap {
+  animation: none;
+}
+
+.ones-cta__ones-img {
+  transition: opacity .2s ease;
+}
+
+.ones-cta__ones-img--hover {
   position: absolute;
   inset: 0;
   opacity: 0;
 }
 
-.ones-cta__line--ones:hover,
-.ones-cta__line--ones:focus-visible {
-  box-shadow: 12px 12px #000000f0;
-  transform: translateY(-8px) rotate(1deg) scale(1.03);
-}
-
-.ones-cta__line--ones:hover .ones-cta__ones-img--hover,
-.ones-cta__line--ones:focus-visible .ones-cta__ones-img--hover {
+.ones-cta__line--ones.nav__link:hover .ones-cta__ones-img--hover,
+.ones-cta__line--ones.nav__link:focus .ones-cta__ones-img--hover {
   opacity: 1;
 }
 
-.ones-cta__line--ones:hover .ones-cta__ones-img--default,
-.ones-cta__line--ones:focus-visible .ones-cta__ones-img--default {
+.ones-cta__line--ones.nav__link:hover .ones-cta__ones-img--default,
+.ones-cta__line--ones.nav__link:focus .ones-cta__ones-img--default {
   opacity: 0;
 }
 
-.ones-cta__line--ones .ones-cta__ones-img--default {
-  opacity: 1;
+.ones-cta__line--ones.nav__link:focus-visible {
+  outline: 2px solid #55b5ff;
+  outline-offset: 4px;
 }
 
-.ones-cta__line--ones::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  box-shadow: inset 0 0 0 2px #0000000d;
-  pointer-events: none;
+.ones-cta__line--small:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
 }
 
-.ones-cta__breath {
-  animation: onesPulse 4s ease-in-out infinite;
-}
-
-.ones-cta__breath:hover,
-.ones-cta__breath:focus-visible {
-  animation-play-state: paused;
-}
-
-@keyframes onesPulse {
+@keyframes ones-breathe {
   0%,
   100% {
-    transform: translateY(0) rotate(1deg) scale(1);
-    box-shadow: 8px 8px #000000bf;
+    transform: scale(1);
   }
 
   50% {
-    transform: translateY(-2px) rotate(1deg) scale(1.01);
-    box-shadow: 10px 10px #000000d9;
+    transform: scale(1.02);
   }
 }
 
