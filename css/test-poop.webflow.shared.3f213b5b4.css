@@ -2166,6 +2166,115 @@ a {
   transform: translate(0, -8px);
 }
 
+.ones-league-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.ones-tag {
+  position: relative;
+}
+
+.ones-tag--top {
+  --angle: -6deg;
+  transform: rotate(var(--angle));
+}
+
+.ones-tag--bottom {
+  --angle: 5deg;
+  transform: rotate(var(--angle));
+}
+
+.ones-tag-img {
+  display: block;
+  width: 100%;
+  max-width: 210px;
+}
+
+.ones-main-btn {
+  position: relative;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  transform: translateZ(0);
+  transition: transform .18s ease-out;
+  display: inline-block;
+}
+
+.ones-main-img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  transition: opacity .18s ease-out, transform .18s ease-out, filter .18s ease-out;
+}
+
+.ones-main-img--blue {
+  opacity: 1;
+}
+
+.ones-main-img--dark {
+  opacity: 0;
+}
+
+.ones-main-btn:hover {
+  transform: translateZ(8px);
+}
+
+.ones-main-btn:hover .ones-main-img--blue {
+  opacity: 0;
+}
+
+.ones-main-btn:hover .ones-main-img--dark {
+  opacity: 1;
+}
+
+.ones-main-btn:hover .ones-main-img {
+  filter: drop-shadow(0 10px 24px #0000008c);
+  transform: translateY(-2px);
+}
+
+.ones-main-btn::after,
+.ones-tag::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: -4px;
+  background-image: url("../images/grunge.png");
+  background-size: cover;
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition: opacity .18s ease-out;
+}
+
+.ones-main-btn:hover::after,
+.ones-tag:hover::after {
+  opacity: .55;
+}
+
+.ones-tag:hover {
+  filter: drop-shadow(0 6px 16px #00000066);
+  transform: translateY(-1px) rotate(var(--angle));
+}
+
+@media (max-width: 900px) {
+  .ones-tag-img {
+    max-width: 180px;
+  }
+
+  .ones-main-img {
+    max-width: 220px;
+  }
+}
+
 .bg__gradient {
   background-image: linear-gradient(#0009, #0000 22%), linear-gradient(169deg, #1a1a1a00 57%, #000), linear-gradient(52deg, #000, #00000082 0%, #0000 103%);
   position: absolute;
