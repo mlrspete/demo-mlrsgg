@@ -2131,39 +2131,127 @@ a {
   inset: 0%;
 }
 
-.nav__link {
-  color: #ff3449;
-  text-transform: uppercase;
-  cursor: none;
-  border-radius: 4px;
-  padding-bottom: 0;
-  padding-left: 12px;
-  padding-right: 0;
-  font-size: 64px;
-  font-weight: 500;
-  line-height: 112px;
-  text-decoration: none;
-  transition: padding-right .2s, transform .2s, background-color .2s;
-  position: relative;
+@font-face {
+  font-family: "Galantic";
+  src: url("../fonts/Galantic-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-.nav__link:hover {
-  color: #000;
-  background-color: #ff3449;
+@font-face {
+  font-family: "Daffiys";
+  src: url("../fonts/Daffiys.ttf") format("truetype"), url("../fonts/Daffiys.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.ones-stack-link {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+}
+
+.ones-stack {
+  background-color: #0b0d11;
+  background-image: linear-gradient(180deg, #0f131b 0%, #0b0d11 100%);
+  border: 1px solid #0f1220;
+  border-radius: 10px;
+  padding: 22px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: min(260px, 32vw);
+  box-shadow: 0 0 0 1px #000;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease, background-color .2s ease, background-image .2s ease;
+}
+
+.ones-stack-link:hover .ones-stack,
+.ones-stack-link:focus .ones-stack {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 10px 10px 0 #000, 0 10px 30px #00000080;
+  background-image: linear-gradient(180deg, #0f141e 0%, #0b0d11 100%), url("../images/grunge.png");
+  background-size: cover;
+}
+
+.ones-line {
+  text-align: center;
+  color: #e8f6ff;
+  letter-spacing: .08em;
+}
+
+.ones-line--main {
+  font-family: "Galantic", "Inter", sans-serif;
+  font-size: clamp(68px, 8vw, 104px);
+  line-height: 1;
+  padding: 8px 18px;
+  border-radius: 8px;
+  color: #69d7ff;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: .12em;
+  transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s;
+}
+
+.ones-line--league img {
+  display: block;
+  width: min(200px, 70vw);
+  height: auto;
+  filter: drop-shadow(0 6px 16px #00000070);
+}
+
+.ones-line--subtitle {
+  font-family: "Daffiys", "Inter", sans-serif;
+  font-size: clamp(26px, 3vw, 38px);
+  color: #cfd8e8;
+  letter-spacing: .04em;
+}
+
+.nav__link {
+  color: #69d7ff;
+  text-transform: uppercase;
+  cursor: inherit;
+  border-radius: 8px;
+  padding-bottom: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: clamp(68px, 8vw, 104px);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s;
+  position: relative;
+  display: inline-block;
+  background-color: #0000;
+  font-family: "Galantic", "Inter", sans-serif;
+}
+
+.nav__link:hover,
+.ones-stack-link:hover .ones-line--main.nav__link,
+.ones-stack-link:focus .ones-line--main.nav__link {
+  color: #050607;
+  background-color: #69d7ff;
   background-image: url("../images/grunge.png");
   background-size: cover;
   padding-left: 20px;
   padding-right: 24px;
-  transform: translate(0, -8px);
+  transform: translate(0, -6px);
   box-shadow: 6px 6px #000;
 }
 
-.nav__link:focus {
-  color: #000;
-  background-color: #ff3449;
+.nav__link:focus,
+.ones-stack-link:focus .ones-line--main.nav__link {
+  color: #050607;
+  background-color: #69d7ff;
   padding-left: 20px;
-  padding-right: 48px;
-  transform: translate(0, -8px);
+  padding-right: 24px;
+  transform: translate(0, -6px);
+  box-shadow: 6px 6px #000;
+  outline: 2px solid #69d7ff;
+  outline-offset: 4px;
 }
 
 .bg__gradient {
