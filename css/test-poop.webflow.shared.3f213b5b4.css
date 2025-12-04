@@ -8,6 +8,22 @@ body {
   margin: 0;
 }
 
+@font-face {
+  font-family: "Galantic";
+  src: url("../fonts/Galantic-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Daffiys";
+  src: url("../fonts/Daffiys.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -2132,38 +2148,94 @@ a {
 }
 
 .nav__link {
-  color: #ff3449;
+  color: #6cd8ff;
   text-transform: uppercase;
-  cursor: none;
-  border-radius: 4px;
-  padding-bottom: 0;
-  padding-left: 12px;
-  padding-right: 0;
-  font-size: 64px;
-  font-weight: 500;
-  line-height: 112px;
+  cursor: inherit;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: .95;
   text-decoration: none;
-  transition: padding-right .2s, transform .2s, background-color .2s;
+  transition: padding .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s;
   position: relative;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
-.nav__link:hover {
-  color: #000;
-  background-color: #ff3449;
+.nav__link:hover,
+.nav__link:focus,
+.ones-stack-link:hover .nav__link,
+.ones-stack-link:focus .nav__link {
+  color: #050607;
+  background-color: #6cd8ff;
   background-image: url("../images/grunge.png");
   background-size: cover;
-  padding-left: 20px;
-  padding-right: 24px;
-  transform: translate(0, -8px);
-  box-shadow: 6px 6px #000;
+  padding-left: 28px;
+  padding-right: 28px;
+  transform: translate(0, -6px);
+  box-shadow: 8px 8px #000;
 }
 
-.nav__link:focus {
-  color: #000;
-  background-color: #ff3449;
-  padding-left: 20px;
-  padding-right: 48px;
-  transform: translate(0, -8px);
+.ones-stack-link {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  transform-style: preserve-3d;
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.ones-stack {
+  background-color: #0b0d12;
+  background-image: linear-gradient(150deg, #0a0d12 0%, #0f1622 100%);
+  border: 1px solid #0f1722;
+  border-radius: 14px;
+  padding: 22px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  min-width: 220px;
+  max-width: 260px;
+  box-shadow: 0 0 0 #000;
+  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, background-image .25s ease, filter .25s ease;
+}
+
+.ones-stack-link:hover .ones-stack,
+.ones-stack-link:focus .ones-stack {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 12px 12px 0 #000;
+  background-color: #0f141d;
+  background-image: url("../images/grunge.png"), linear-gradient(145deg, #0a0d12 0%, #0f1622 100%);
+}
+
+.ones-line {
+  width: 100%;
+  text-align: center;
+}
+
+.ones-line--main {
+  font-family: "Galantic", "Inter", sans-serif;
+  font-size: 96px;
+  line-height: .9;
+}
+
+.ones-line--league img {
+  width: 170px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.ones-line--subtitle {
+  font-family: "Daffiys", "Inter", sans-serif;
+  font-size: 34px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .bg__gradient {
