@@ -2354,138 +2354,121 @@ a {
   overflow: hidden;
 }
 
-.nav {
-  z-index: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style-type: none;
-  display: flex;
-  position: relative;
-}
+  .nav {
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    position: relative;
+  }
 
-.ones-league-stack {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  pointer-events: auto;
-  align-self: center;
-}
+  .ones-league-stack {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    pointer-events: auto;
+  }
 
-.ones-tag {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  --tag-angle: 0deg;
-}
+  .ones-tag {
+    position: relative;
+    --angle: 0deg;
+    transition: transform .18s ease-out, filter .18s ease-out, opacity .18s ease-out;
+  }
 
-.ones-tag--top {
-  --tag-angle: -6deg;
-  transform: rotate(var(--tag-angle));
-}
+  .ones-tag--top {
+    --angle: -6deg;
+    transform: rotate(var(--angle));
+  }
 
-.ones-tag--bottom {
-  --tag-angle: 5deg;
-  transform: rotate(var(--tag-angle));
-}
+  .ones-tag--bottom {
+    --angle: 5deg;
+    transform: rotate(var(--angle));
+  }
 
-.ones-tag-img {
-  display: block;
-  max-width: clamp(160px, 24vw, 210px);
-  width: 100%;
-}
+  .ones-tag-img {
+    display: block;
+    max-width: 210px;
+    width: 100%;
+    height: auto;
+  }
 
-.ones-main-btn {
-  position: relative;
-  border: none;
-  background: none;
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-  transform: translateZ(0);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  color: inherit;
-  box-shadow: none;
-  text-decoration: none;
-}
+  .ones-tag::after,
+  .ones-main-btn::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: -4px;
+    background-image: url("../images/grunge.png");
+    background-size: cover;
+    opacity: 0;
+    mix-blend-mode: screen;
+    transition: opacity .18s ease-out;
+  }
 
-.ones-main-btn.nav__link {
-  padding: 0;
-  line-height: 1;
-}
+  .ones-main-btn {
+    position: relative;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    transform: translateZ(0);
+    transition: transform .18s ease-out;
+    display: block;
+  }
 
-.ones-main-btn.nav__link:hover {
-  background: none;
-  background-image: none;
-  padding: 0;
-  box-shadow: none;
-}
+  .ones-main-img {
+    display: block;
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    transition: opacity .18s ease-out, transform .18s ease-out, filter .18s ease-out;
+  }
 
-.ones-main-img {
-  display: block;
-  max-width: clamp(200px, 28vw, 280px);
-  width: 100%;
-  transition: opacity .18s ease-out, transform .18s ease-out, filter .18s ease-out;
-}
+  .ones-main-img--blue {
+    opacity: 1;
+  }
 
-.ones-main-img--blue {
-  opacity: 1;
-}
+  .ones-main-img--dark {
+    opacity: 0;
+  }
 
-.ones-main-img--dark {
-  opacity: 0;
-}
+  .ones-main-btn:hover {
+    transform: translateZ(8px) scale(1.03);
+  }
 
-.ones-main-btn:hover {
-  transform: translateZ(8px);
-}
+  .ones-main-btn:hover .ones-main-img--blue {
+    opacity: 0;
+  }
 
-.ones-main-btn:hover .ones-main-img--blue {
-  opacity: 0;
-}
+  .ones-main-btn:hover .ones-main-img--dark {
+    opacity: 1;
+  }
 
-.ones-main-btn:hover .ones-main-img--dark {
-  opacity: 1;
-}
+  .ones-main-btn:hover .ones-main-img {
+    filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .55));
+    transform: translateY(-2px);
+  }
 
-.ones-main-btn:hover .ones-main-img {
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .55));
-  transform: translateY(-2px);
-}
+  .ones-tag:hover {
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, .4));
+    transform: translateY(-1px) rotate(var(--angle));
+  }
 
-.ones-tag:hover {
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, .4));
-  transform: translateY(-1px) rotate(var(--tag-angle));
-}
+  .ones-main-btn:hover::after,
+  .ones-tag:hover::after {
+    opacity: .55;
+  }
 
-.ones-main-btn::after,
-.ones-tag::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  inset: -4px;
-  background-image: url("../images/grunge.png");
-  background-size: cover;
-  opacity: 0;
-  mix-blend-mode: screen;
-  transition: opacity .18s ease-out;
-}
-
-.ones-main-btn:hover::after,
-.ones-tag:hover::after {
-  opacity: .55;
-}
-
-.arrows {
-  z-index: 1;
-  grid-column-gap: 6px;
+  .arrows {
+    z-index: 1;
+    grid-column-gap: 6px;
   grid-row-gap: 6px;
   border-radius: 4px;
   grid-template-rows: 48px 48px;
