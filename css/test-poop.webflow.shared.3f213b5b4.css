@@ -2329,6 +2329,73 @@ a {
   position: relative;
 }
 
+.ones-stack-link {
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.ones-stack {
+  background-color: #0a0c14;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease, background-color .25s ease;
+}
+
+.ones-stack-link:hover .ones-stack,
+.ones-stack-link:focus .ones-stack {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 10px 10px 0 #000, 0 0 24px rgba(84, 231, 255, .25);
+  background-image: url("../images/grunge.png");
+  background-size: cover;
+}
+
+.ones-line {
+  width: 100%;
+  text-align: center;
+  color: #f6f8ff;
+}
+
+.ones-line--main {
+  font-family: "Galantic", "Rubik Mono One", sans-serif;
+  font-size: 86px;
+  line-height: .9;
+  letter-spacing: .14em;
+  color: #54e7ff;
+  margin-bottom: 4px;
+}
+
+.ones-line--league img {
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  margin: 0 auto;
+}
+
+.ones-line--subtitle {
+  font-family: "Daffiys", "Inter", cursive;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: .04em;
+  color: #f2f4ff;
+  margin-top: 2px;
+}
+
+.ones-stack-link:hover .ones-line--subtitle,
+.ones-stack-link:focus .ones-line--subtitle,
+.ones-stack-link:hover .ones-line--league,
+.ones-stack-link:focus .ones-line--league {
+  filter: drop-shadow(0 0 14px rgba(84, 231, 255, .2));
+}
+
 .arrows {
   z-index: 1;
   grid-column-gap: 6px;
