@@ -54,6 +54,13 @@
         $('.ones-cta__line:first-child').focus();
   });
 
+  function focusCtaByIndex(index){
+    var navItems = $('.ones-cta__line');
+    if (navItems.length && index >= 0 && index < navItems.length){
+      $(navItems[index]).focus();
+    }
+  }
+
   $(document).keydown(function(event){
     var key = event.which;
     var ctaItems = $('.ones-cta__line');
@@ -72,7 +79,7 @@
         ctaItems.last().focus();
       }
       highlightArrow('#arrowUp');
-      break;
+    }
 
       // Key down.
       case 40:
@@ -87,7 +94,6 @@
         ctaItems.first().focus();
       }
       highlightArrow('#arrowDown');
-      break;
     }
   });
 
