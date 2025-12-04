@@ -2182,8 +2182,9 @@ a {
 .ones-stack-link {
   text-decoration: none;
   cursor: pointer;
-  display: inline-block;
-  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  width: auto;
 }
 
 .ones-stack {
@@ -2210,10 +2211,14 @@ a {
   background-size: cover;
 }
 
+
 .ones-line {
   text-align: center;
   color: #e8f6ff;
   letter-spacing: .08em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .ones-line--main {
@@ -2233,6 +2238,7 @@ a {
   display: block;
   width: clamp(170px, 70%, 420px);
   height: auto;
+  margin: 0 auto;
   filter: drop-shadow(0 6px 16px #00000070);
   margin-left: auto;
   margin-right: auto;
@@ -2332,7 +2338,7 @@ a {
 .hero-left {
   flex: 1 1 auto;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .hero-right {
@@ -2381,13 +2387,17 @@ a {
   list-style-type: none;
   display: flex;
   position: relative;
+  text-align: center;
 }
+
 
 .ones-stack-link {
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
   cursor: pointer;
   color: inherit;
+  justify-content: center;
+  width: auto;
 }
 
 .ones-stack {
@@ -2401,6 +2411,7 @@ a {
   display: flex;
   transition: transform .2s, box-shadow .2s, filter .2s, background-color .2s, background-image .2s;
   transform-origin: center;
+  box-shadow: none;
 }
 
 .ones-stack-link:hover .ones-stack,
@@ -2413,11 +2424,13 @@ a {
   background-size: cover;
 }
 
+
 .ones-line {
-  display: block;
+  display: flex;
   color: #e5ecf5;
   text-align: center;
   width: 100%;
+  justify-content: center;
 }
 
 .ones-line--main {
@@ -2434,6 +2447,7 @@ a {
   max-width: 100%;
   width: clamp(170px, 70%, 420px);
   height: auto;
+  margin: 0 auto;
   filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
   margin-left: auto;
   margin-right: auto;
@@ -2443,7 +2457,7 @@ a {
   font-family: "Daffiys", "Inter", sans-serif;
   font-size: clamp(30px, 3vw, 42px);
   line-height: 1;
-  letter-spacing: 1px;
+  letter-spacing: .06em;
   color: #dfe6f1;
   width: clamp(140px, 56%, 340px);
   margin-left: auto;
