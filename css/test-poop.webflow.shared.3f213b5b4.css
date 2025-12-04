@@ -2166,6 +2166,137 @@ a {
   transform: translate(0, -8px);
 }
 
+/* Ones League CTA sticker stack */
+.ones-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.ones-cta__line {
+  --ones-tilt: 0deg;
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(var(--ones-tilt));
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+  position: relative;
+}
+
+.ones-cta__line:focus-visible {
+  outline: 2px solid #4ab3ff;
+  outline-offset: 4px;
+}
+
+.ones-cta__line img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 220px;
+  pointer-events: none;
+}
+
+.ones-cta__line--small {
+  cursor: pointer;
+}
+
+.ones-cta__line--tag {
+  --ones-tilt: -2deg;
+}
+
+.ones-cta__line--ones {
+  --ones-tilt: 1deg;
+  width: 190px;
+  max-width: 190px;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 0;
+  line-height: 1;
+  padding: 0;
+  box-shadow: 0 0 0 #000;
+  background: none;
+  animation: ones-breathe 4s ease-in-out infinite alternate;
+}
+
+.ones-cta__line--ones.nav__link {
+  color: inherit;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.ones-cta__line--ones:hover,
+.ones-cta__line--ones:focus-visible {
+  box-shadow: 6px 6px #000;
+  background: none;
+  padding: 0;
+  transform: rotate(var(--ones-tilt)) translateY(-8px) scale(1.03);
+}
+
+.ones-cta__ones-img {
+  width: 100%;
+  transition: opacity .2s ease;
+}
+
+.ones-cta__ones-img--hover {
+  position: absolute;
+  inset: 0%;
+  opacity: 0;
+}
+
+.ones-cta__line--ones:hover .ones-cta__ones-img--hover,
+.ones-cta__line--ones:focus-visible .ones-cta__ones-img--hover {
+  opacity: 1;
+}
+
+.ones-cta__line--ones:hover .ones-cta__ones-img--default,
+.ones-cta__line--ones:focus-visible .ones-cta__ones-img--default {
+  opacity: 0;
+}
+
+.ones-cta__line--label {
+  --ones-tilt: -1deg;
+}
+
+.ones-cta__line--small::after {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  border-radius: 8px;
+  background-image: url("../images/grunge.png");
+  background-size: cover;
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: none;
+}
+
+.ones-cta__line--small:hover,
+.ones-cta__line--small:focus-visible {
+  transform: translateY(-2px) rotate(var(--ones-tilt)) scale(1.01);
+}
+
+.ones-cta__line--small:hover::after,
+.ones-cta__line--small:focus-visible::after {
+  opacity: .35;
+}
+
+@keyframes ones-breathe {
+  0% {
+    transform: rotate(var(--ones-tilt)) scale(1);
+  }
+
+  100% {
+    transform: rotate(var(--ones-tilt)) scale(1.015);
+  }
+}
+
 .bg__gradient {
   background-image: linear-gradient(#0009, #0000 22%), linear-gradient(169deg, #1a1a1a00 57%, #000), linear-gradient(52deg, #000, #00000082 0%, #0000 103%);
   position: absolute;
@@ -2229,6 +2360,10 @@ a {
     width: 100%;
     max-width: 100%;
     justify-content: center;
+  }
+
+  .ones-cta {
+    align-items: center;
   }
 
   .mlrs-server-card-wrapper {

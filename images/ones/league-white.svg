@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="60" viewBox="0 0 220 60" role="img" aria-labelledby="title">
   <title>League</title>
-  <rect width="160" height="40" rx="6" fill="none" stroke="#ffffff" stroke-width="2.5" />
-  <text x="50%" y="50%" fill="#ffffff" font-family="'Inter', 'Roboto Mono', monospace" font-size="22" font-weight="800" letter-spacing="6" text-anchor="middle" dominant-baseline="central">LEAGUE</text>
+  <rect width="220" height="60" fill="none" rx="6" />
+  <text x="50%" y="50%" fill="#fff" font-family="'Inter', 'Arial Black', sans-serif" font-size="32" font-weight="800" text-anchor="middle" dominant-baseline="middle" letter-spacing="6">LEAGUE</text>
 </svg>
