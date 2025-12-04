@@ -2257,6 +2257,145 @@ a {
   position: relative;
 }
 
+/* Ones League CTA sticker stack. Assets live in images/ones/. Update the link in the hero markup if the league URL changes. */
+.ones-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  transform: translateZ(0);
+}
+
+.ones-cta__line {
+  --ones-tilt: 0deg;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  transform: rotate(var(--ones-tilt));
+  transition: transform .2s ease, filter .2s ease, box-shadow .2s ease, opacity .2s ease;
+  cursor: pointer;
+}
+
+.ones-cta__line img {
+  display: block;
+  height: auto;
+  width: auto;
+}
+
+.ones-cta__line--small {
+  --ones-tilt: -2deg;
+}
+
+.ones-cta__line--league {
+  --ones-tilt: -1deg;
+}
+
+.ones-cta__line--ones {
+  --ones-tilt: 1deg;
+}
+
+.ones-cta__line--small::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background-image: var(--ones-noise, url("../images/grunge.png"));
+  background-size: cover;
+  opacity: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  border-radius: 4px;
+}
+
+.ones-cta__line--small:hover,
+.ones-cta__line--small:focus-visible {
+  transform: rotate(var(--ones-tilt)) translateY(-2px);
+}
+
+.ones-cta__line--small:hover::after,
+.ones-cta__line--small:focus-visible::after {
+  opacity: .4;
+  transform: translateY(-2px);
+}
+
+.ones-cta__line--ones.nav__link {
+  background: none;
+  background-image: none;
+  box-shadow: 0 0 0 transparent;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  color: #000;
+}
+
+.ones-cta__line--ones.nav__link:hover,
+.ones-cta__line--ones.nav__link:focus {
+  background: none;
+  background-image: none;
+  padding: 0;
+  box-shadow: 12px 12px 0 #000;
+  transform: rotate(var(--ones-tilt)) translateY(-8px) scale(1.03);
+}
+
+.ones-cta__line--ones.nav__link .ones-cta__ones-img-wrap {
+  position: relative;
+  display: inline-flex;
+  transform-origin: center;
+  animation: ones-breathe 4s ease-in-out infinite;
+}
+
+.ones-cta__line--ones.nav__link:hover .ones-cta__ones-img-wrap,
+.ones-cta__line--ones.nav__link:focus .ones-cta__ones-img-wrap {
+  animation: none;
+}
+
+.ones-cta__ones-img {
+  transition: opacity .2s ease;
+}
+
+.ones-cta__ones-img--hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.ones-cta__line--ones.nav__link:hover .ones-cta__ones-img--hover,
+.ones-cta__line--ones.nav__link:focus .ones-cta__ones-img--hover {
+  opacity: 1;
+}
+
+.ones-cta__line--ones.nav__link:hover .ones-cta__ones-img--default,
+.ones-cta__line--ones.nav__link:focus .ones-cta__ones-img--default {
+  opacity: 0;
+}
+
+.ones-cta__line--ones.nav__link:focus-visible {
+  outline: 2px solid #55b5ff;
+  outline-offset: 4px;
+}
+
+.ones-cta__line--small:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+@keyframes ones-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+}
+
 .arrows {
   z-index: 1;
   grid-column-gap: 6px;
