@@ -8,6 +8,22 @@ body {
   margin: 0;
 }
 
+@font-face {
+  font-family: "Galantic";
+  src: url("../fonts/Galantic-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Daffiys";
+  src: url("../fonts/Daffiys.ttf") format("truetype"), url("../fonts/Daffiys.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -2132,38 +2148,44 @@ a {
 }
 
 .nav__link {
-  color: #ff3449;
+  color: #54e7ff;
   text-transform: uppercase;
-  cursor: none;
-  border-radius: 4px;
-  padding-bottom: 0;
-  padding-left: 12px;
-  padding-right: 0;
-  font-size: 64px;
-  font-weight: 500;
-  line-height: 112px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
   text-decoration: none;
-  transition: padding-right .2s, transform .2s, background-color .2s;
+  transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s;
   position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
-.nav__link:hover {
+.nav__link:hover,
+.ones-stack-link:hover .nav__link,
+.ones-stack-link:focus .nav__link {
   color: #000;
-  background-color: #ff3449;
+  background-color: #54e7ff;
   background-image: url("../images/grunge.png");
   background-size: cover;
-  padding-left: 20px;
-  padding-right: 24px;
+  padding-left: 18px;
+  padding-right: 18px;
   transform: translate(0, -8px);
   box-shadow: 6px 6px #000;
 }
 
 .nav__link:focus {
   color: #000;
-  background-color: #ff3449;
-  padding-left: 20px;
-  padding-right: 48px;
+  background-color: #54e7ff;
+  background-image: url("../images/grunge.png");
+  background-size: cover;
+  padding-left: 18px;
+  padding-right: 32px;
   transform: translate(0, -8px);
+  box-shadow: 6px 6px #000;
 }
 
 .bg__gradient {
@@ -2255,6 +2277,73 @@ a {
   list-style-type: none;
   display: flex;
   position: relative;
+}
+
+.ones-stack-link {
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.ones-stack {
+  background-color: #0a0c14;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease, background-color .25s ease;
+}
+
+.ones-stack-link:hover .ones-stack,
+.ones-stack-link:focus .ones-stack {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 10px 10px 0 #000, 0 0 24px rgba(84, 231, 255, .25);
+  background-image: url("../images/grunge.png");
+  background-size: cover;
+}
+
+.ones-line {
+  width: 100%;
+  text-align: center;
+  color: #f6f8ff;
+}
+
+.ones-line--main {
+  font-family: "Galantic", "Rubik Mono One", sans-serif;
+  font-size: 86px;
+  line-height: .9;
+  letter-spacing: .14em;
+  color: #54e7ff;
+  margin-bottom: 4px;
+}
+
+.ones-line--league img {
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  margin: 0 auto;
+}
+
+.ones-line--subtitle {
+  font-family: "Daffiys", "Inter", cursive;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: .04em;
+  color: #f2f4ff;
+  margin-top: 2px;
+}
+
+.ones-stack-link:hover .ones-line--subtitle,
+.ones-stack-link:focus .ones-line--subtitle,
+.ones-stack-link:hover .ones-line--league,
+.ones-stack-link:focus .ones-line--league {
+  filter: drop-shadow(0 0 14px rgba(84, 231, 255, .2));
 }
 
 .arrows {
