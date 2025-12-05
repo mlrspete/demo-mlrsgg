@@ -2220,6 +2220,10 @@ a {
   width: 100%;
 }
 
+.ones-line--league {
+  margin-top: -6px;
+}
+
 .ones-line--main {
   font-family: "Galantic", "Inter", sans-serif;
   font-size: clamp(135px, 12vw, 200px);
@@ -2230,6 +2234,8 @@ a {
   text-transform: uppercase;
   display: inline-block;
   letter-spacing: .14em;
+  position: relative;
+  z-index: 1;
   transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s;
   position: relative;
   isolation: isolate;
@@ -2302,6 +2308,20 @@ a {
   box-shadow: none;
   outline: 2px solid #00576e;
   outline-offset: 4px;
+}
+
+@keyframes ones-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .bg__gradient {
@@ -2496,6 +2516,10 @@ a {
   margin-right: auto;
 }
 
+.ones-line--league {
+  margin-top: -6px;
+}
+
 .ones-line--subtitle {
   font-family: "Daffiys", "Inter", sans-serif;
   font-size: clamp(30px, 4vw, 40px);
@@ -2551,6 +2575,20 @@ a {
 
 .arrow-key__icon.down {
   transform: rotate(90deg);
+}
+
+@keyframes onesGlowMotion {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .cursor {
