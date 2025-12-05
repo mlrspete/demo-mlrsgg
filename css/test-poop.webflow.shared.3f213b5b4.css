@@ -2199,7 +2199,7 @@ a {
   align-items: center;
   width: min(360px, 82vw);
   box-shadow: none;
-  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease, background-color .2s ease, background-image .2s ease;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease, background-color .2s ease, background-image .2s ease, backdrop-filter .2s ease;
 }
 
 .ones-stack-link:hover .ones-stack,
@@ -2413,7 +2413,7 @@ a {
   gap: 12px;
   display: flex;
   width: min(360px, 82vw);
-  transition: transform .2s, box-shadow .2s, filter .2s;
+  transition: transform .2s, box-shadow .2s, filter .2s, background-color .2s ease, backdrop-filter .2s ease;
   transform-origin: center;
   box-shadow: none;
 }
