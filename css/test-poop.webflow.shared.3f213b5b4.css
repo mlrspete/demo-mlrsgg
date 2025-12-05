@@ -2205,11 +2205,11 @@ a {
 .ones-stack-link:hover .ones-stack,
 .ones-stack-link:focus .ones-stack {
   transform: translateY(-6px) scale(1.02);
-  background: rgba(0, 87, 110, 0.08);
   box-shadow: 0 20px 60px rgba(0, 87, 110, 0.25);
+  background-image: none;
+  background-color: rgba(0, 87, 110, 0.08);
   backdrop-filter: blur(10px) saturate(140%);
   -webkit-backdrop-filter: blur(10px) saturate(140%);
-  background-image: none;
 }
 
 
@@ -2224,7 +2224,7 @@ a {
 
 .ones-line--main {
   font-family: "Galantic", "Inter", sans-serif;
-  font-size: clamp(135px, 13.5vw, 204px);
+  font-size: clamp(135px, 12vw, 190px);
   line-height: .92;
   padding: 8px 18px;
   border-radius: 8px;
@@ -2266,7 +2266,7 @@ a {
   padding-bottom: 0;
   padding-left: 12px;
   padding-right: 12px;
-  font-size: clamp(135px, 13.5vw, 204px);
+  font-size: clamp(135px, 12vw, 190px);
   font-weight: 700;
   line-height: .92;
   text-decoration: none;
@@ -2421,11 +2421,11 @@ a {
 .ones-stack-link:hover .ones-stack,
 .ones-stack-link:focus .ones-stack {
   transform: translate3d(0, -4px, 0) scale(1.01);
-  background: rgba(0, 87, 110, 0.08);
   box-shadow: 0 20px 60px rgba(0, 87, 110, 0.25);
+  filter: none;
+  background-color: rgba(0, 87, 110, 0.08);
   backdrop-filter: blur(10px) saturate(140%);
   -webkit-backdrop-filter: blur(10px) saturate(140%);
-  filter: none;
 }
 
 
@@ -2439,7 +2439,7 @@ a {
 
 .ones-line--main {
   font-family: "Galantic", "Inter", sans-serif;
-  font-size: clamp(135px, 13.5vw, 204px);
+  font-size: clamp(135px, 12vw, 190px);
   font-weight: 700;
   letter-spacing: .14em;
   line-height: .92;
