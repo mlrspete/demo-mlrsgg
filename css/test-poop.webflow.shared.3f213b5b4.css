@@ -2237,6 +2237,31 @@ a {
   position: relative;
   z-index: 1;
   transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s;
+  position: relative;
+}
+
+.ones-line--main::before {
+  content: "";
+  position: absolute;
+  inset: -16px -28px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0, 87, 110, 0.08), rgba(0, 122, 146, 0.22), rgba(0, 87, 110, 0.08));
+  background-size: 220% 220%;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 22px rgba(0, 108, 135, 0.32));
+  opacity: .45;
+  z-index: -1;
+  pointer-events: none;
+  animation: onesGlowMotion 12s ease-in-out infinite;
+}
+
+.ones-stack-link:hover .ones-line--main::before,
+.ones-stack-link:focus .ones-line--main::before {
+  opacity: .58;
+}
+
+.ones-line--league {
+  margin-top: -6px;
 }
 
 .ones-line--main::before {
@@ -2499,22 +2524,30 @@ a {
   line-height: .92;
   color: #00576e;
   position: relative;
-  z-index: 1;
 }
 
 .ones-line--main::before {
   content: "";
   position: absolute;
-  inset: -14px -28px;
-  border-radius: 14px;
-  background: linear-gradient(130deg, rgba(0, 87, 110, 0.12), rgba(22, 163, 190, 0.4), rgba(0, 87, 110, 0.18));
-  background-size: 250% 250%;
+  inset: -16px -28px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0, 87, 110, 0.08), rgba(0, 122, 146, 0.22), rgba(0, 87, 110, 0.08));
+  background-size: 220% 220%;
   mix-blend-mode: screen;
-  opacity: .6;
-  filter: drop-shadow(0 0 22px rgba(0, 126, 155, 0.38));
-  pointer-events: none;
+  filter: drop-shadow(0 0 22px rgba(0, 108, 135, 0.32));
+  opacity: .45;
   z-index: -1;
-  animation: ones-halo 12s ease infinite;
+  pointer-events: none;
+  animation: onesGlowMotion 12s ease-in-out infinite;
+}
+
+.ones-stack-link:hover .ones-line--main::before,
+.ones-stack-link:focus .ones-line--main::before {
+  opacity: .58;
+}
+
+.ones-line--league {
+  margin-top: -6px;
 }
 
 .ones-line--league img {
@@ -2588,6 +2621,20 @@ a {
 
 .arrow-key__icon.down {
   transform: rotate(90deg);
+}
+
+@keyframes onesGlowMotion {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .cursor {
