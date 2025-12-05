@@ -2221,7 +2221,7 @@ a {
 }
 
 .ones-line--league {
-  margin-top: -6px;
+  margin-top: -8px;
 }
 
 .ones-line--main {
@@ -2239,8 +2239,6 @@ a {
   transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s, text-shadow .2s;
   position: relative;
   isolation: isolate;
-  text-shadow: 0 0 4px rgba(0, 198, 255, 0.9), 0 0 7px rgba(0, 240, 255, 0.65), 0 0 10px rgba(0, 128, 255, 0.6);
-  animation: onesEdgeGlow 3.2s ease-in-out infinite;
 }
 
 .ones-line--league img {
@@ -2256,7 +2254,7 @@ a {
 }
 
 .ones-line--league {
-  margin-top: -5px;
+  margin-top: -8px;
 }
 
 .ones-line--subtitle {
@@ -2469,27 +2467,6 @@ a {
   color: #00576e;
   position: relative;
   isolation: isolate;
-  text-shadow: 0 0 4px rgba(0, 198, 255, 0.65), 0 0 8px rgba(0, 240, 255, 0.55), 0 0 12px rgba(0, 128, 255, 0.5);
-  animation: onesTextGlow 3.2s ease-in-out infinite;
-}
-
-.ones-stack-link:hover .ones-line--main,
-.ones-stack-link:focus .ones-line--main {
-  text-shadow: 0 0 5px rgba(0, 198, 255, 0.85), 0 0 10px rgba(0, 240, 255, 0.7), 0 0 14px rgba(0, 128, 255, 0.65);
-}
-
-@keyframes onesTextGlow {
-  0% {
-    text-shadow: 0 0 4px rgba(0, 198, 255, 0.65), 0 0 8px rgba(0, 240, 255, 0.55), 0 0 12px rgba(0, 128, 255, 0.5);
-  }
-
-  50% {
-    text-shadow: 1px -1px 6px rgba(0, 240, 255, 0.75), -1px 1px 10px rgba(0, 198, 255, 0.6), 0 0 14px rgba(0, 128, 255, 0.6);
-  }
-
-  100% {
-    text-shadow: 0 0 4px rgba(0, 198, 255, 0.65), 0 0 8px rgba(0, 240, 255, 0.55), 0 0 12px rgba(0, 128, 255, 0.5);
-  }
 }
 
 .ones-line--league img {
@@ -2505,7 +2482,7 @@ a {
 }
 
 .ones-line--league {
-  margin-top: -6px;
+  margin-top: -8px;
 }
 
 .ones-line--subtitle {
