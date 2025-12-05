@@ -2236,9 +2236,11 @@ a {
   letter-spacing: .14em;
   position: relative;
   z-index: 1;
-  transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s;
+  transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s, text-shadow .2s;
   position: relative;
   isolation: isolate;
+  text-shadow: 0 0 4px rgba(0, 198, 255, 0.9), 0 0 7px rgba(0, 240, 255, 0.65), 0 0 10px rgba(0, 128, 255, 0.6);
+  animation: onesEdgeGlow 3.2s ease-in-out infinite;
 }
 
 .ones-line--league img {
