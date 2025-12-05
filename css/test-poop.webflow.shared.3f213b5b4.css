@@ -2469,32 +2469,26 @@ a {
   color: #00576e;
   position: relative;
   isolation: isolate;
-  text-shadow: 0 0 4px rgba(0, 198, 255, 0.9), 0 0 7px rgba(0, 240, 255, 0.65), 0 0 10px rgba(0, 128, 255, 0.6);
-  animation: onesEdgeGlow 3.2s ease-in-out infinite;
+  text-shadow: 0 0 4px rgba(0, 198, 255, 0.65), 0 0 8px rgba(0, 240, 255, 0.55), 0 0 12px rgba(0, 128, 255, 0.5);
+  animation: onesTextGlow 3.2s ease-in-out infinite;
 }
 
-.ones-line--main .nav__link-inner {
-  text-shadow: 0 0 6px #00d2ff, 0 0 10px #00b3ff, 1px 2px 6px rgba(0, 128, 255, 0.35);
-  animation: onesNeonEdge 3.2s ease-in-out infinite;
-  transition: text-shadow .2s ease;
+.ones-stack-link:hover .ones-line--main,
+.ones-stack-link:focus .ones-line--main {
+  text-shadow: 0 0 5px rgba(0, 198, 255, 0.85), 0 0 10px rgba(0, 240, 255, 0.7), 0 0 14px rgba(0, 128, 255, 0.65);
 }
 
-.ones-stack-link:hover .ones-line--main .nav__link-inner,
-.ones-stack-link:focus .ones-line--main .nav__link-inner {
-  text-shadow: 0 0 7px #00e4ff, 0 0 12px #00c8ff, 1px 2px 8px rgba(0, 160, 255, 0.45);
-}
-
-@keyframes onesNeonEdge {
+@keyframes onesTextGlow {
   0% {
-    text-shadow: 0 0 6px #00d2ff, 0 0 10px #00b3ff, 1px 2px 6px rgba(0, 128, 255, 0.35);
+    text-shadow: 0 0 4px rgba(0, 198, 255, 0.65), 0 0 8px rgba(0, 240, 255, 0.55), 0 0 12px rgba(0, 128, 255, 0.5);
   }
 
   50% {
-    text-shadow: 0 0 7px #00e4ff, -1px 2px 8px #00c8ff, 2px -2px 7px rgba(0, 192, 255, 0.4);
+    text-shadow: 1px -1px 6px rgba(0, 240, 255, 0.75), -1px 1px 10px rgba(0, 198, 255, 0.6), 0 0 14px rgba(0, 128, 255, 0.6);
   }
 
   100% {
-    text-shadow: 0 0 6px #00d2ff, 1px 2px 9px #00b3ff, -2px 1px 6px rgba(0, 160, 255, 0.35);
+    text-shadow: 0 0 4px rgba(0, 198, 255, 0.65), 0 0 8px rgba(0, 240, 255, 0.55), 0 0 12px rgba(0, 128, 255, 0.5);
   }
 }
 
