@@ -2239,6 +2239,8 @@ a {
   transition: padding-right .2s, padding-left .2s, transform .2s, background-color .2s, box-shadow .2s, color .2s;
   position: relative;
   isolation: isolate;
+  text-shadow: 0 0 4px rgba(0, 198, 255, 0.6), 0 0 8px rgba(0, 240, 255, 0.45), 0 2px 12px rgba(0, 128, 255, 0.4);
+  animation: onesNeonEdge 3.4s ease-in-out infinite;
 }
 
 .ones-line--league img {
@@ -2296,6 +2298,7 @@ a {
   padding-right: 12px;
   transform: none;
   box-shadow: none;
+  text-shadow: 0 0 5px rgba(0, 198, 255, 0.7), 0 0 10px rgba(0, 240, 255, 0.55), 0 3px 14px rgba(0, 128, 255, 0.5);
 }
 
 .nav__link:focus,
@@ -2467,40 +2470,21 @@ a {
   color: #00576e;
   position: relative;
   isolation: isolate;
+  text-shadow: 0 0 4px rgba(0, 198, 255, 0.6), 0 0 8px rgba(0, 240, 255, 0.45), 0 2px 12px rgba(0, 128, 255, 0.4);
+  animation: onesNeonEdge 3.4s ease-in-out infinite;
 }
 
-.ones-line--main::before {
-  content: "";
-  position: absolute;
-  inset: -16px -22px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(0, 87, 110, 0.55), rgba(0, 130, 165, 0.3), rgba(0, 87, 110, 0.55));
-  background-size: 200% 200%;
-  mix-blend-mode: screen;
-  opacity: .45;
-  filter: blur(8px);
-  z-index: -1;
-  pointer-events: none;
-  animation: onesOutlineGlow 12s ease-in-out infinite;
-}
-
-.ones-stack-link:hover .ones-line--main::before,
-.ones-stack-link:focus .ones-line--main::before {
-  opacity: .55;
-  filter: blur(6px);
-}
-
-@keyframes onesOutlineGlow {
+@keyframes onesNeonEdge {
   0% {
-    background-position: 0% 50%;
+    text-shadow: 0 0 4px rgba(0, 198, 255, 0.6), 0 0 8px rgba(0, 240, 255, 0.45), 0 2px 12px rgba(0, 128, 255, 0.4);
   }
 
   50% {
-    background-position: 100% 50%;
+    text-shadow: 1px -1px 5px rgba(0, 240, 255, 0.7), -2px 2px 9px rgba(0, 198, 255, 0.6), 2px 1px 13px rgba(0, 128, 255, 0.5);
   }
 
   100% {
-    background-position: 0% 50%;
+    text-shadow: 0 0 4px rgba(0, 198, 255, 0.6), 0 0 8px rgba(0, 240, 255, 0.45), 0 2px 12px rgba(0, 128, 255, 0.4);
   }
 }
 
