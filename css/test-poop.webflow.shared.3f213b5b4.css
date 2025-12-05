@@ -2206,10 +2206,8 @@ a {
 .ones-stack-link:focus .ones-stack {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 20px 60px rgba(0, 87, 110, 0.25);
-  background-image: none;
   background-color: rgba(0, 87, 110, 0.08);
   backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
 }
 
 
@@ -2224,7 +2222,7 @@ a {
 
 .ones-line--main {
   font-family: "Galantic", "Inter", sans-serif;
-  font-size: clamp(135px, 12vw, 190px);
+  font-size: clamp(135px, 12vw, 200px);
   line-height: .92;
   padding: 8px 18px;
   border-radius: 8px;
@@ -2266,7 +2264,7 @@ a {
   padding-bottom: 0;
   padding-left: 12px;
   padding-right: 12px;
-  font-size: clamp(135px, 12vw, 190px);
+  font-size: clamp(135px, 12vw, 200px);
   font-weight: 700;
   line-height: .92;
   text-decoration: none;
@@ -2282,7 +2280,6 @@ a {
 .ones-stack-link:focus .ones-line--main.nav__link {
   color: #00576e;
   background-color: transparent;
-  background-image: none;
   padding-left: 12px;
   padding-right: 12px;
   transform: none;
@@ -2413,19 +2410,17 @@ a {
   gap: 12px;
   display: flex;
   width: min(360px, 82vw);
-  transition: transform .2s, box-shadow .2s, filter .2s, background-color .2s ease, backdrop-filter .2s ease;
+  transition: transform .2s, box-shadow .2s, filter .2s, background-color .2s, backdrop-filter .2s;
   transform-origin: center;
   box-shadow: none;
 }
 
 .ones-stack-link:hover .ones-stack,
 .ones-stack-link:focus .ones-stack {
-  transform: translate3d(0, -4px, 0) scale(1.01);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: 0 20px 60px rgba(0, 87, 110, 0.25);
-  filter: none;
   background-color: rgba(0, 87, 110, 0.08);
   backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
 }
 
 
@@ -2439,7 +2434,7 @@ a {
 
 .ones-line--main {
   font-family: "Galantic", "Inter", sans-serif;
-  font-size: clamp(135px, 12vw, 190px);
+  font-size: clamp(135px, 12vw, 200px);
   font-weight: 700;
   letter-spacing: .14em;
   line-height: .92;
