@@ -2220,6 +2220,10 @@ a {
   width: 100%;
 }
 
+.ones-line--league {
+  margin-top: -6px;
+}
+
 .ones-line--main {
   font-family: "Galantic", "Inter", sans-serif;
   font-size: clamp(135px, 12vw, 200px);
@@ -2337,6 +2341,20 @@ a {
   box-shadow: none;
   outline: 2px solid #00576e;
   outline-offset: 4px;
+}
+
+@keyframes ones-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .bg__gradient {
