@@ -3584,7 +3584,7 @@ a {
   width: 74px;
   height: 74px;
   border-radius: 16px;
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(135deg, #ff9c6a, #4ac6ff);
   border: 1px solid var(--line-soft);
   display: grid;
   place-items: center;
@@ -3605,8 +3605,8 @@ a {
   content: "";
   position: absolute;
   inset: -40%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 126, 93, 0.35), transparent 60%),
-    radial-gradient(circle at 70% 70%, rgba(77, 208, 255, 0.28), transparent 60%);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 214, 193, 0.45), transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(172, 232, 255, 0.45), transparent 60%);
   filter: blur(10px);
 }
 
@@ -3628,54 +3628,32 @@ a {
   line-height: 140%;
 }
 
-.match-rotator {
-  position: relative;
-  min-height: 1.4em;
+.recent-matches-wrapper {
+  overflow: hidden;
+}
+
+.recent-matches {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.match-entry {
-  position: absolute;
-  inset: 0;
-  display: inline-flex;
-  width: 100%;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  pointer-events: none;
-  text-transform: none;
+  transition: opacity 0.4s ease;
 }
 
-.match-entry.is-active {
+.recent-matches.is-visible {
   opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 
-.match-entry.is-leaving {
-  opacity: 0;
-  transform: translateY(-8px);
+.match-first {
+  color: #ff5555;
 }
 
-.match-red {
-  color: #ff6b6b;
+.match-second {
+  color: #55aaff;
 }
 
-.match-blue {
-  color: #6ad4ff;
-}
-
-.match-green {
-  color: #7dffb5;
-}
-
-.match-default {
-  color: inherit;
+.match-map {
+  color: #7cff7c;
 }
 
 .mlrs-status {
