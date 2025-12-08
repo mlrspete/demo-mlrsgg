@@ -4309,7 +4309,13 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .nav-col:last-child .nav-button .xsm-text {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.template-nav .nav-col:last-child .nav-button .button-txt {
+  filter: none;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
   .template-nav .nav-col:last-child .nav-button .bg-whipe {
@@ -4346,14 +4352,13 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button:focus-visible .xsm-text,
 .template-nav .nav-col:last-child .nav-button.is-active .xsm-text {
   color: #111;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  text-shadow: none;
 }
 
 .template-nav .nav-col:last-child .nav-button:hover img,
 .template-nav .nav-col:last-child .nav-button:focus-visible img,
 .template-nav .nav-col:last-child .nav-button.is-active img {
-  filter: none;
-  mix-blend-mode: difference;
+  filter: invert(1) brightness(0.1);
 }
 
 .template-nav .nav-col:last-child .nav-button .div-hide {
@@ -4423,11 +4428,9 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .logo-pop-out {
-  position: absolute;
+  position: static;
   z-index: 2;
   display: flex;
-  margin-left: 4.75rem;
-  justify-content: center;
   align-items: center;
   height: 100%;
 }
@@ -4444,8 +4447,8 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .logo-wordmark {
-  text-transform: none;
-  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  letter-spacing: 0.25em;
 }
 
 .template-nav .logo-letter {
@@ -4454,20 +4457,37 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .logo-wordmark {
   font-family: "Jumpshot", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.25em;
   color: #f5f5f5;
   text-transform: lowercase;
 }
 
 .template-nav .logo-wordmark {
   font-family: "Jumpshot", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1;
-  color: #fff;
-  letter-spacing: 0.06em;
-  text-transform: none;
+  color: #f5f5f5;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
+}
+
+.template-nav .nav-brand {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.template-nav .nav-brand-text {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
+  color: #f5f5f5;
 }
 
 .template-nav .sound {
