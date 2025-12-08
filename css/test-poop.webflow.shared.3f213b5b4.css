@@ -4304,8 +4304,24 @@ html.nav-intro-preload .template-nav .sound {
   color: #fff;
 }
 
+.template-nav .nav-col:last-child .nav-button .button-txt,
 .template-nav .nav-col:last-child .nav-button .xsm-text {
-  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.template-nav .nav-col:last-child .nav-button .xsm-text {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.template-nav .nav-col:last-child .nav-button .button-txt {
+  filter: none;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.template-nav .nav-col:last-child .nav-button .button-txt,
+.template-nav .nav-col:last-child .nav-button .xsm-text {
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
 .template-nav .nav-col:last-child .nav-button .button-txt,
@@ -4352,12 +4368,13 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button:focus-visible .xsm-text,
 .template-nav .nav-col:last-child .nav-button.is-active .xsm-text {
   color: #111;
+  text-shadow: none;
 }
 
 .template-nav .nav-col:last-child .nav-button:hover img,
 .template-nav .nav-col:last-child .nav-button:focus-visible img,
 .template-nav .nav-col:last-child .nav-button.is-active img {
-  filter: invert(1);
+  filter: invert(1) brightness(0.1);
 }
 
 .template-nav .nav-col:last-child .nav-button .div-hide {
@@ -4449,12 +4466,29 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .logo-wordmark {
-  text-transform: none;
-  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  letter-spacing: 0.25em;
 }
 
 .template-nav .logo-letter {
   text-transform: none;
+}
+
+.template-nav .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.template-nav .nav-brand-text {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
+  color: #f5f5f5;
+  display: block;
 }
 
 .template-nav .logo-wordmark {
@@ -4492,6 +4526,23 @@ html.nav-intro-preload .template-nav .sound {
   cursor: pointer;
   transform: scale(1);
   opacity: 1;
+}
+
+.template-nav .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.template-nav .nav-brand-text,
+.template-nav .logo-wordmark.nav-brand-text {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
+  color: #f5f5f5;
 }
 
 /* Step 5: sound button pop-in */
@@ -4617,7 +4668,7 @@ html.nav-intro-preload .template-nav .sound {
   }
 
   .template-nav .logo-pop-out {
-    display: none;
+    gap: 0.5rem;
   }
 }
 
