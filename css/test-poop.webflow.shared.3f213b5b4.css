@@ -2354,7 +2354,7 @@ a {
 .hero-layout {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 32px;
   width: 100%;
   max-width: 1400px;
@@ -2372,7 +2372,7 @@ a {
   width: 100%;
   max-width: 720px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 @media (max-width: 900px) {
