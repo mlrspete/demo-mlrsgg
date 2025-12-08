@@ -3603,49 +3603,34 @@ a {
   line-height: 140%;
 }
 
-.match-rotator {
+.rotating-results {
   position: relative;
-  display: block;
-  height: 1.4em;
-  min-height: 1.4em;
-  overflow: hidden;
-  line-height: inherit;
+  display: grid;
+  align-items: center;
 }
 
-.match-entry {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
+.match-result {
+  grid-area: 1/1;
   opacity: 0;
-  transition: opacity 0.45s ease;
+  transition: opacity .6s ease;
 }
 
-.match-entry.is-active {
+.match-result.is-active {
   opacity: 1;
 }
 
-.match-score {
-  display: inline-flex;
-  gap: 0.04em;
-  align-items: baseline;
+.match-player.red,
+.match-score.red {
+  color: #ff5c5c;
 }
 
-.match-red {
-  color: #ff6b6b;
+.match-player.blue,
+.match-score.blue {
+  color: #68b5ff;
 }
 
-.match-blue {
-  color: #7cc2ff;
-}
-
-.match-green {
-  color: #8bfab3;
-}
-
-.match-neutral {
-  color: inherit;
+.match-map {
+  color: #7adf91;
 }
 
 .mlrs-status {
@@ -4195,6 +4180,7 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .div-hide {
   position: relative;
+  display: flex;
   overflow: hidden;
   justify-content: center;
   align-items: center;
@@ -4237,10 +4223,10 @@ html.nav-intro-preload .template-nav .sound {
 
 /* Right-hand template nav buttons: default frosted glass styling */
 .template-nav .nav-col:last-child .nav-button {
-  background-color: rgba(10, 10, 10, 0.2);
+  background-color: rgba(18, 18, 18, 0.32);
   background-image: none;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   color: #fff;
 }
 
