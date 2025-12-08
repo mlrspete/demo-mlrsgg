@@ -3580,11 +3580,16 @@ a {
   gap: 12px;
 }
 
+.recent-matches-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
 .mlrs-logo-plate {
   width: 74px;
   height: 74px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #ff9b6b 0%, #4dd0ff 100%);
+  background: linear-gradient(135deg, #ff9b73, #5ac8ff);
   border: 1px solid var(--line-soft);
   display: grid;
   place-items: center;
@@ -3631,27 +3636,35 @@ a {
 .recent-matches {
   position: relative;
   min-height: 1.4em;
+}
+
+.recent-matches {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  opacity: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   transition: opacity 0.4s ease;
 }
 
-.recent-matches.is-visible {
-  opacity: 1;
+.recent-matches.is-fading {
+  opacity: 0;
 }
 
+.match-red,
 .match-first {
   color: #ff5555;
 }
 
+.match-blue,
 .match-second {
   color: #55aaff;
 }
 
+.match-green,
 .match-map {
-  color: #7cff7c;
+  color: #7CFF7C;
 }
 
 .match-separator {
