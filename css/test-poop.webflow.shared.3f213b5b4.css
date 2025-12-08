@@ -24,6 +24,14 @@ body {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Jumpshot";
+  src: url("../fonts/JUMPSHOT.otf") format("opentype"), url("../fonts/JUMPSHOT.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -3594,6 +3602,15 @@ a {
   filter: blur(10px);
 }
 
+.server-icon-letter {
+  position: relative;
+  z-index: 1;
+  font-family: "Jumpshot", sans-serif;
+  font-size: 36px;
+  line-height: 1;
+  color: #0f0f0f;
+}
+
 .mlrs-variant-label {
   color: var(--text-dim);
   font-size: 12px;
@@ -3606,6 +3623,9 @@ a {
 .match-rotator {
   position: relative;
   min-height: 1.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .match-entry {
@@ -3614,6 +3634,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -4041,11 +4062,19 @@ html.nav-intro-preload .template-nav .sound {
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  font-family: "Jumpshot", sans-serif;
 }
 
 .template-nav .icon-logo {
   width: 1.4rem;
   height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #111;
 }
 
 .template-nav .nav-button {
@@ -4236,10 +4265,10 @@ html.nav-intro-preload .template-nav .sound {
 
 /* Right-hand template nav buttons: default frosted glass styling */
 .template-nav .nav-col:last-child .nav-button {
-  background-color: rgba(16, 16, 16, 0.32);
+  background-color: rgba(32, 32, 32, 0.38);
   background-image: none;
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
   color: #fff;
 }
 
@@ -4250,8 +4279,8 @@ html.nav-intro-preload .template-nav .sound {
   .template-nav .nav-col:last-child .nav-button .bg-whipe {
     background-color: transparent;
     mix-blend-mode: normal;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
     pointer-events: none;
   }
 
@@ -4273,8 +4302,8 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button.is-active {
   background-color: #fff;
   color: #111;
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
 }
 
 .template-nav .nav-col:last-child .nav-button:hover .xsm-text,
@@ -4362,6 +4391,21 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .logo-small {
   width: 8rem;
   height: 0.8rem;
+  display: flex;
+  align-items: center;
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.4rem;
+  line-height: 0.8rem;
+  color: #fff;
+}
+
+.template-nav .logo-wordmark {
+  text-transform: none;
+  letter-spacing: 0.06em;
+}
+
+.template-nav .logo-letter {
+  text-transform: none;
 }
 
 .template-nav .sound {
