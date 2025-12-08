@@ -24,6 +24,14 @@ body {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Jumpshot";
+  src: url("../fonts/JUMPSHOT.otf") format("opentype"), url("../fonts/JUMPSHOT.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -3585,6 +3593,14 @@ a {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
+.mlrs-logo-letter {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: #0f0f0f;
+  text-transform: none;
+}
+
 .mlrs-logo-plate::after {
   content: "";
   position: absolute;
@@ -3606,6 +3622,9 @@ a {
 .match-rotator {
   position: relative;
   min-height: 1.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .match-entry {
@@ -3614,6 +3633,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -4048,6 +4068,14 @@ html.nav-intro-preload .template-nav .sound {
   height: 1.2rem;
 }
 
+.template-nav .logo-letter {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #0f0f0f;
+  text-transform: none;
+}
+
 .template-nav .nav-button {
   position: relative;
   display: flex;
@@ -4236,10 +4264,10 @@ html.nav-intro-preload .template-nav .sound {
 
 /* Right-hand template nav buttons: default frosted glass styling */
 .template-nav .nav-col:last-child .nav-button {
-  background-color: rgba(16, 16, 16, 0.32);
+  background-color: rgba(28, 28, 28, 0.4);
   background-image: none;
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
   color: #fff;
 }
 
@@ -4273,8 +4301,8 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button.is-active {
   background-color: #fff;
   color: #111;
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
 }
 
 .template-nav .nav-col:last-child .nav-button:hover .xsm-text,
@@ -4295,6 +4323,10 @@ html.nav-intro-preload .template-nav .sound {
   justify-content: center;
   width: 100%;
   text-align: center;
+}
+
+.template-nav .nav-col:last-child .nav-button .button-txt-ap {
+  display: none;
 }
 
 .template-nav .nav-col:last-child .nav-button .button-txt,
@@ -4362,6 +4394,15 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .logo-small {
   width: 8rem;
   height: 0.8rem;
+}
+
+.template-nav .logo-wordmark {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-transform: none;
 }
 
 .template-nav .sound {
