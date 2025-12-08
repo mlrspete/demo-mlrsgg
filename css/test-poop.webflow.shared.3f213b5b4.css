@@ -4318,6 +4318,11 @@ html.nav-intro-preload .template-nav .sound {
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
+.template-nav .nav-col:last-child .nav-button .button-txt,
+.template-nav .nav-col:last-child .nav-button .xsm-text {
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
   .template-nav .nav-col:last-child .nav-button .bg-whipe {
     background-color: transparent;
     mix-blend-mode: normal;
@@ -4428,10 +4433,13 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .logo-pop-out {
-  position: static;
+  position: relative;
   z-index: 2;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-left: 0;
   height: 100%;
 }
 
@@ -4453,6 +4461,23 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .logo-letter {
   text-transform: none;
+}
+
+.template-nav .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.template-nav .nav-brand-text {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
+  color: #f5f5f5;
+  display: block;
 }
 
 .template-nav .logo-wordmark {
@@ -4483,6 +4508,14 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .nav-brand-text {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
+  color: #f5f5f5;
+}
+
+.template-nav .logo-wordmark.nav-brand-text {
   font-family: "Jumpshot", sans-serif;
   font-size: 1.4rem;
   letter-spacing: 0.25em;
@@ -4649,7 +4682,7 @@ html.nav-intro-preload .template-nav .sound {
   }
 
   .template-nav .logo-pop-out {
-    display: none;
+    gap: 0.5rem;
   }
 }
 
