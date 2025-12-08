@@ -26,7 +26,7 @@ body {
 
 @font-face {
   font-family: "Jumpshot";
-  src: url("../fonts/JUMPSHOT.otf") format("opentype"), url("../fonts/JUMPSHOT.ttf") format("truetype");
+  src: url("../fonts/JUMPSHOT.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -3593,6 +3593,16 @@ a {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
+.mlrs-logo-letter {
+  position: relative;
+  z-index: 1;
+  font-family: "Jumpshot", sans-serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: #0f0f0f;
+  text-transform: none;
+}
+
 .mlrs-logo-plate::after {
   content: "";
   position: absolute;
@@ -3632,6 +3642,7 @@ a {
   position: absolute;
   inset: 0;
   display: inline-flex;
+  width: 100%;
   align-items: center;
   gap: 4px;
   white-space: nowrap;
@@ -3639,6 +3650,7 @@ a {
   transform: translateY(8px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: none;
+  text-transform: none;
 }
 
 .match-entry.is-active {
@@ -4065,16 +4077,22 @@ html.nav-intro-preload .template-nav .sound {
   font-family: "Jumpshot", sans-serif;
 }
 
-.template-nav .icon-logo {
-  width: 1.4rem;
-  height: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.template-nav .logo-letter {
   font-family: "Jumpshot", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   line-height: 1;
-  color: #111;
+  color: #0f0f0f;
+  text-transform: none;
+}
+
+.template-nav .logo-wordmark {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  display: block;
 }
 
 .template-nav .nav-button {
@@ -4265,7 +4283,7 @@ html.nav-intro-preload .template-nav .sound {
 
 /* Right-hand template nav buttons: default frosted glass styling */
 .template-nav .nav-col:last-child .nav-button {
-  background-color: rgba(32, 32, 32, 0.38);
+  background-color: rgba(26, 26, 26, 0.42);
   background-image: none;
   -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
@@ -4279,8 +4297,8 @@ html.nav-intro-preload .template-nav .sound {
   .template-nav .nav-col:last-child .nav-button .bg-whipe {
     background-color: transparent;
     mix-blend-mode: normal;
-    -webkit-backdrop-filter: blur(0px);
-    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
     pointer-events: none;
   }
 
@@ -4323,6 +4341,7 @@ html.nav-intro-preload .template-nav .sound {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100%;
   text-align: center;
 }
 
