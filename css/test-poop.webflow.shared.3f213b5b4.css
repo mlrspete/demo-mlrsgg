@@ -4303,6 +4303,11 @@ html.nav-intro-preload .template-nav .sound {
   color: #fff;
 }
 
+.template-nav .nav-col:last-child .nav-button .button-txt,
+.template-nav .nav-col:last-child .nav-button .xsm-text {
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
 .template-nav .nav-col:last-child .nav-button .xsm-text {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
@@ -4427,6 +4432,7 @@ html.nav-intro-preload .template-nav .sound {
   z-index: 2;
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .template-nav .logo-small {
@@ -4501,6 +4507,23 @@ html.nav-intro-preload .template-nav .sound {
   cursor: pointer;
   transform: scale(1);
   opacity: 1;
+}
+
+.template-nav .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.template-nav .nav-brand-text,
+.template-nav .logo-wordmark.nav-brand-text {
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
+  color: #f5f5f5;
 }
 
 /* Step 5: sound button pop-in */
