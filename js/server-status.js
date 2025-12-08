@@ -1,6 +1,38 @@
 const SERVER_STATUS_API = 'https://api.battlemetrics.com/servers/34356678';
 const SERVER_REFRESH_INTERVAL = 60000;
 
+function initMatchRotator() {
+  const rotator = document.querySelector('.match-rotator');
+  if (!rotator) return;
+
+  const entries = Array.from(rotator.querySelectorAll('.match-entry'));
+  if (entries.length <= 1) return;
+
+  let currentIndex = entries.findIndex((entry) => entry.classList.contains('is-active'));
+  if (currentIndex < 0) {
+    entries[0].classList.add('is-active');
+    currentIndex = 0;
+  }
+
+  const cycleEntries = () => {
+    const current = entries[currentIndex];
+    const nextIndex = (currentIndex + 1) % entries.length;
+    const next = entries[nextIndex];
+
+    current.classList.remove('is-active');
+    current.classList.add('is-leaving');
+    next.classList.add('is-active');
+
+    window.setTimeout(() => {
+      current.classList.remove('is-leaving');
+    }, 500);
+
+    currentIndex = nextIndex;
+  };
+
+  setInterval(cycleEntries, 3000);
+}
+
 function applyStatusVisual(isOnline, statusDot, statusText) {
   statusDot.classList.toggle('online', isOnline);
   statusDot.classList.toggle('offline', !isOnline);
@@ -81,6 +113,8 @@ async function fetchServerStatus() {
 document.addEventListener('DOMContentLoaded', () => {
   fetchServerStatus();
   setInterval(fetchServerStatus, SERVER_REFRESH_INTERVAL);
+
+  initMatchRotator();
 
   const syncCardToNavTrack = () => {
     const cardWrapper = document.querySelector('.mlrs-server-card-wrapper');
