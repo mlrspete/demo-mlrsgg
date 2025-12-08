@@ -3580,11 +3580,16 @@ a {
   gap: 12px;
 }
 
+.recent-matches-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
 .mlrs-logo-plate {
   width: 74px;
   height: 74px;
   border-radius: 16px;
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(135deg, #ff9b73, #5ac8ff);
   border: 1px solid var(--line-soft);
   display: grid;
   place-items: center;
@@ -3631,47 +3636,35 @@ a {
 .match-rotator {
   position: relative;
   min-height: 1.4em;
+}
+
+.recent-matches {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.match-entry {
-  position: absolute;
-  inset: 0;
   display: inline-flex;
-  width: 100%;
   align-items: center;
   gap: 4px;
-  white-space: nowrap;
+  transition: opacity 0.4s ease;
+}
+
+.recent-matches.is-fading {
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  pointer-events: none;
-  text-transform: none;
 }
 
-.match-entry.is-active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+.match-red,
+.match-first {
+  color: #ff5555;
 }
 
-.match-entry.is-leaving {
-  opacity: 0;
-  transform: translateY(-8px);
+.match-blue,
+.match-second {
+  color: #55aaff;
 }
 
-.match-red {
-  color: #ff6b6b;
-}
-
-.match-blue {
-  color: #6ad4ff;
-}
-
-.match-green {
-  color: #7dffb5;
+.match-green,
+.match-map {
+  color: #7CFF7C;
 }
 
 .match-default {
