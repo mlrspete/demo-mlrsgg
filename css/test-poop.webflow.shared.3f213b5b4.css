@@ -3975,6 +3975,7 @@ a {
 .template-nav .nav-col.middle {
   overflow: hidden;
   align-items: center;
+  gap: 0.75rem;
 }
 
 /* Intro state: frost panel starts off-screen to the left */
@@ -4296,15 +4297,25 @@ html.nav-intro-preload .template-nav .sound {
 
 /* Right-hand template nav buttons: default frosted glass styling */
 .template-nav .nav-col:last-child .nav-button {
-  background-color: rgba(28, 28, 28, 0.4);
+  background-color: rgba(0, 0, 0, 0.55);
   background-image: none;
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   color: #fff;
 }
 
 .template-nav .nav-col:last-child .nav-button .xsm-text {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.template-nav .nav-col:last-child .nav-button .button-txt,
+.template-nav .nav-col:last-child .nav-button .xsm-text {
+  filter: none;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.template-nav .nav-col:last-child .nav-button img {
+  filter: none;
 }
 
   .template-nav .nav-col:last-child .nav-button .bg-whipe {
@@ -4331,10 +4342,10 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button:hover,
 .template-nav .nav-col:last-child .nav-button:focus-visible,
 .template-nav .nav-col:last-child .nav-button.is-active {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   color: #111;
-  -webkit-backdrop-filter: blur(0px);
-  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .template-nav .nav-col:last-child .nav-button:hover .xsm-text,
@@ -4416,12 +4427,14 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .logo-pop-out {
-  position: absolute;
+  position: relative;
   z-index: 2;
+  order: 2;
   display: flex;
-  margin-left: 5.6rem;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-left: 0;
 }
 
 .template-nav .logo-small {
@@ -4446,20 +4459,20 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .logo-wordmark {
   font-family: "Jumpshot", sans-serif;
-  font-size: 1.6rem;
-  line-height: 1;
-  letter-spacing: 0.08em;
+  font-size: 1.4rem;
+  line-height: 1.1;
+  letter-spacing: 0.25em;
   color: #f5f5f5;
   text-transform: lowercase;
 }
 
 .template-nav .logo-wordmark {
   font-family: "Jumpshot", sans-serif;
-  font-size: 1.6rem;
-  line-height: 1;
-  color: #fff;
-  letter-spacing: 0.06em;
-  text-transform: none;
+  font-size: 1.4rem;
+  line-height: 1.1;
+  color: #f5f5f5;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
 }
 
 .template-nav .sound {
