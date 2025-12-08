@@ -3584,7 +3584,7 @@ a {
   width: 74px;
   height: 74px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #ff9c6a, #4ac6ff);
+  background: linear-gradient(135deg, #ff9b6b 0%, #4dd0ff 100%);
   border: 1px solid var(--line-soft);
   display: grid;
   place-items: center;
@@ -3628,11 +3628,9 @@ a {
   line-height: 140%;
 }
 
-.recent-matches-wrapper {
-  overflow: hidden;
-}
-
 .recent-matches {
+  position: relative;
+  min-height: 1.4em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3654,6 +3652,10 @@ a {
 
 .match-map {
   color: #7cff7c;
+}
+
+.match-separator {
+  color: inherit;
 }
 
 .mlrs-status {
