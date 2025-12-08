@@ -4253,8 +4253,8 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button.is-active {
   background-color: #fff;
   color: #111;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 .template-nav .nav-col:last-child .nav-button:hover .xsm-text,
@@ -4267,6 +4267,20 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button:focus-visible img,
 .template-nav .nav-col:last-child .nav-button.is-active img {
   filter: invert(1);
+}
+
+.template-nav .nav-col:last-child .nav-button .div-hide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.template-nav .nav-col:last-child .nav-button .button-txt,
+.template-nav .nav-col:last-child .nav-button .button-txt-ap {
+  width: 100%;
+  text-align: center;
 }
 
 .template-nav .bg-whipe {
@@ -4283,16 +4297,16 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .bg-whipe.blend {
   background-color: hsla(0, 0%, 100%, 0.05);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .template-nav .bg-whipe.fade-over {
   z-index: 10;
   display: none;
   background-color: rgba(26, 26, 26, 0.7);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   mix-blend-mode: normal;
 }
 
