@@ -4255,6 +4255,13 @@ html.nav-intro-preload .template-nav .sound {
     pointer-events: none;
   }
 
+.template-nav .nav-col:last-child .nav-button .div-hide.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .template-nav .nav-col:last-child .nav-button img {
   filter: none;
   transition: filter .2s ease-out;
