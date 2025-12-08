@@ -17,7 +17,7 @@
   <div class="mlrs-card-outer">
     <div class="mlrs-card-inner">
       <div class="mlrs-card-header">
-        <div class="mlrs-logo-slot">
+          <div class="mlrs-logo-slot">
           <div class="mlrs-logo-plate">
             <img src="cardlogo.png" loading="lazy" alt="MLRS server icon" class="server-icon-image"/>
           </div>
@@ -115,4 +115,25 @@
       $(target).removeClass('is--active')
     }, 100);
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var rotation = document.querySelector('.match-rotation');
+    if (!rotation) return;
+
+    var entries = rotation.querySelectorAll('.match-entry');
+    if (!entries.length) return;
+
+    var activeIndex = 0;
+    entries.forEach(function(entry, index) {
+      entry.classList.toggle('is-active', index === 0);
+    });
+
+    if (entries.length === 1) return;
+
+    setInterval(function() {
+      entries[activeIndex].classList.remove('is-active');
+      activeIndex = (activeIndex + 1) % entries.length;
+      entries[activeIndex].classList.add('is-active');
+    }, 3000);
+  });
 </script><script src="js/template-nav.js" type="text/javascript"></script></body></html>
