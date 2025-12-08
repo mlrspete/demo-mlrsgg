@@ -3603,42 +3603,48 @@ a {
   line-height: 140%;
 }
 
-.match-rotation {
+.match-rotator {
   position: relative;
-  min-height: 1.5em;
+  min-height: 1.4em;
 }
 
 .match-entry {
   position: absolute;
   inset: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
 }
 
 .match-entry.is-active {
   opacity: 1;
-  position: relative;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.match-player--red,
-.match-score--red {
+.match-entry.is-leaving {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.match-red {
   color: #ff6b6b;
 }
 
-.match-player--blue,
-.match-score--blue {
-  color: #6bb4ff;
+.match-blue {
+  color: #6ad4ff;
 }
 
-.match-map {
-  color: #7be0a2;
+.match-green {
+  color: #7dffb5;
 }
 
-.match-separator {
-  color: currentColor;
+.match-default {
+  color: inherit;
 }
 
 .mlrs-status {
@@ -4230,7 +4236,7 @@ html.nav-intro-preload .template-nav .sound {
 
 /* Right-hand template nav buttons: default frosted glass styling */
 .template-nav .nav-col:last-child .nav-button {
-  background-color: rgba(18, 18, 22, 0.2);
+  background-color: rgba(16, 16, 16, 0.32);
   background-image: none;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
@@ -4241,13 +4247,13 @@ html.nav-intro-preload .template-nav .sound {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.template-nav .nav-col:last-child .nav-button .bg-whipe {
-  background-color: transparent;
-  mix-blend-mode: normal;
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  pointer-events: none;
-}
+  .template-nav .nav-col:last-child .nav-button .bg-whipe {
+    background-color: transparent;
+    mix-blend-mode: normal;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    pointer-events: none;
+  }
 
 .template-nav .nav-col:last-child .nav-button .div-hide.intro {
   display: flex;
@@ -4267,8 +4273,8 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button.is-active {
   background-color: #fff;
   color: #111;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 .template-nav .nav-col:last-child .nav-button:hover .xsm-text,
@@ -4281,6 +4287,20 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button:focus-visible img,
 .template-nav .nav-col:last-child .nav-button.is-active img {
   filter: invert(1);
+}
+
+.template-nav .nav-col:last-child .nav-button .div-hide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.template-nav .nav-col:last-child .nav-button .button-txt,
+.template-nav .nav-col:last-child .nav-button .button-txt-ap {
+  width: 100%;
+  text-align: center;
 }
 
 .template-nav .bg-whipe {
