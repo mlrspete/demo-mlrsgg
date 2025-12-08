@@ -3612,6 +3612,15 @@ a {
   filter: blur(10px);
 }
 
+.server-icon-letter {
+  position: relative;
+  z-index: 1;
+  font-family: "Jumpshot", sans-serif;
+  font-size: 36px;
+  line-height: 1;
+  color: #0f0f0f;
+}
+
 .mlrs-variant-label {
   color: var(--text-dim);
   font-size: 12px;
@@ -3636,6 +3645,7 @@ a {
   width: 100%;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -4064,6 +4074,7 @@ html.nav-intro-preload .template-nav .sound {
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  font-family: "Jumpshot", sans-serif;
 }
 
 .template-nav .logo-letter {
@@ -4399,6 +4410,21 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .logo-small {
   width: 8rem;
   height: 0.8rem;
+  display: flex;
+  align-items: center;
+  font-family: "Jumpshot", sans-serif;
+  font-size: 1.4rem;
+  line-height: 0.8rem;
+  color: #fff;
+}
+
+.template-nav .logo-wordmark {
+  text-transform: none;
+  letter-spacing: 0.06em;
+}
+
+.template-nav .logo-letter {
+  text-transform: none;
 }
 
 .template-nav .sound {
