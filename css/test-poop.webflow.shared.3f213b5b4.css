@@ -4287,6 +4287,8 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .div-hide.intro {
   width: 100%;
   height: 100%;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .template-nav .div-hide.intro.hide {
@@ -4328,40 +4330,14 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .nav-col:last-child .nav-button .button-txt,
 .template-nav .nav-col:last-child .nav-button .xsm-text {
-  text-shadow: none;
-}
-
-.template-nav .nav-col:last-child .nav-button .xsm-text {
   color: #fff;
-  text-shadow: none;
 }
 
-.template-nav .nav-col:last-child .nav-button img {
-  filter: none;
-  text-shadow: none;
-}
-
-.template-nav .nav-col:last-child .nav-button .button-txt,
-.template-nav .nav-col:last-child .nav-button .xsm-text {
-  text-shadow: none;
-}
-
-.template-nav .nav-col:last-child .nav-button .button-txt,
-.template-nav .nav-col:last-child .nav-button .xsm-text {
-  filter: none;
-  text-shadow: none;
-}
-
-.template-nav .nav-button .nav-icon svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-
-  .template-nav .nav-col:last-child .nav-button .bg-whipe {
+.template-nav .nav-col:last-child .nav-button .bg-whipe {
     background-color: transparent;
     mix-blend-mode: normal;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     pointer-events: none;
   }
 
@@ -4374,7 +4350,8 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .nav-col:last-child .nav-button img {
   filter: none;
-  transition: filter .2s ease-out;
+  transition: none;
+  mix-blend-mode: difference;
 }
 
 /* Hover/active treatments for the right-hand template nav items */
@@ -4392,12 +4369,6 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button.is-active .xsm-text {
   color: #0b0e11;
   text-shadow: none;
-}
-
-.template-nav .nav-col:last-child .nav-button:hover img,
-.template-nav .nav-col:last-child .nav-button:focus-visible img,
-.template-nav .nav-col:last-child .nav-button.is-active img {
-  filter: brightness(0) saturate(100%);
 }
 
 .template-nav .nav-col:last-child .nav-button .div-hide {
