@@ -3662,9 +3662,12 @@ a {
   color: #55aaff;
 }
 
-.match-green,
+.match-green {
+  color: #7CFF7C;
+}
+
 .match-map {
-  color: #b3b8c2;
+  color: #B3B8C2;
 }
 
 .match-separator {
@@ -4297,13 +4300,12 @@ html.nav-intro-preload .template-nav .sound {
 
 /* Right-hand template nav buttons: default frosted glass styling */
 .template-nav .nav-col:last-child .nav-button {
-  position: relative;
-  overflow: hidden;
   background-color: transparent;
   background-image: none;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   color: #fff;
+  overflow: hidden;
 }
 
 .template-nav .nav-col:last-child .nav-button::before {
@@ -4314,7 +4316,6 @@ html.nav-intro-preload .template-nav .sound {
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   z-index: 0;
-  pointer-events: none;
   transition: background-color .2s ease-out, -webkit-backdrop-filter .2s ease-out, backdrop-filter .2s ease-out;
 }
 
