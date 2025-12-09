@@ -3400,9 +3400,9 @@ a {
 }
 
 .server-current {
-  color: #ff9b7b;
+  color: var(--accent-primary);
   font-weight: 700;
-  text-shadow: 0 0 12px rgba(255, 155, 123, .4);
+  text-shadow: 0 0 12px rgba(77, 208, 255, .4);
 }
 
 .server-max {
@@ -3665,6 +3665,10 @@ a {
 .match-green,
 .match-map {
   color: #b3b8c2;
+}
+
+.match-map {
+  color: #B3B8C2;
 }
 
 .match-separator {
