@@ -4321,7 +4321,7 @@ html.nav-intro-preload .template-nav .sound {
 
 /* Right-hand template nav buttons: default frosted glass styling */
 .template-nav .nav-col:last-child .nav-button {
-  --nav-btn-bg: rgba(0, 0, 0, 0.55);
+  --nav-btn-bg: rgba(0, 0, 0, 0.35);
   --nav-btn-blur: 10px;
   background-color: transparent;
   background-image: none;
@@ -4348,6 +4348,18 @@ html.nav-intro-preload .template-nav .sound {
   text-align: center;
 }
 
+.template-nav .nav-col:last-child .nav-button .nav-icon {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+  filter: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  mix-blend-mode: normal;
+}
+
 .template-nav .nav-col:last-child .nav-button img {
   filter: none;
   transition: none;
@@ -4358,7 +4370,7 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button:hover,
 .template-nav .nav-col:last-child .nav-button:focus-visible,
 .template-nav .nav-col:last-child .nav-button.is-active {
-  --nav-btn-bg: rgba(255, 255, 255, 0.85);
+  --nav-btn-bg: rgba(255, 255, 255, 0.8);
   --nav-btn-blur: 10px;
   background-color: transparent;
   color: #0b0e11;
