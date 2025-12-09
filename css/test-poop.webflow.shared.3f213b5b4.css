@@ -4384,16 +4384,24 @@ html.nav-intro-preload .template-nav .sound {
   display: none;
 }
 
-  .template-nav .nav-col:last-child .nav-button .nav-icon {
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    color: inherit;
-    visibility: visible;
-    opacity: 1;
-    filter: none;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
+.template-nav .nav-col:last-child .nav-button .nav-icon {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+  color: #fff;
+  fill: currentColor;
+  filter: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  mix-blend-mode: normal;
+}
+
+.template-nav .nav-col:last-child .nav-button:hover .nav-icon,
+.template-nav .nav-col:last-child .nav-button:focus-visible .nav-icon,
+.template-nav .nav-col:last-child .nav-button.is-active .nav-icon {
+  color: #0b0e11;
 }
 
 .template-nav .nav-col:last-child .nav-button .button-txt,
