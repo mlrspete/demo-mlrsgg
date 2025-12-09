@@ -4778,3 +4778,52 @@ html.nav-intro-preload .template-nav .sound {
   min-height: 100vh;
 }
 /* === SNAP FOOTER LAYOUT END === */
+
+/* === TYPOGRAPHY & ICON TUNING === */
+:root {
+  --mlrs-text-font: "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html,
+body,
+.body {
+  font-family: var(--mlrs-text-font);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.template-nav .nav-button,
+.template-nav .nav-label,
+.template-nav .button-txt,
+.template-nav .button-txt-ap,
+.template-nav .xsm-text,
+.server-status-text,
+.server-name,
+.server-player-count,
+.server-current,
+.server-max,
+.players-label,
+.mlrs-tag,
+.server-connect-btn {
+  font-family: var(--mlrs-text-font);
+  font-weight: 400;
+}
+
+.server-name {
+  font-weight: 600;
+}
+
+.server-current {
+  font-weight: 500;
+}
+
+.template-nav .nav-col:last-child .nav-button .nav-icon-img {
+  width: 44px;
+  height: 44px;
+}
