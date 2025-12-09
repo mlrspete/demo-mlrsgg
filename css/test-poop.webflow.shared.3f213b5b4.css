@@ -3589,7 +3589,7 @@ a {
   width: 74px;
   height: 74px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #ff9b73, #5ac8ff);
+  background: linear-gradient(135deg, #7a3b32 0%, #1c3a4a 100%);
   border: 1px solid var(--line-soft);
   display: grid;
   place-items: center;
@@ -3662,9 +3662,12 @@ a {
   color: #55aaff;
 }
 
-.match-green,
-.match-map {
+.match-green {
   color: #7CFF7C;
+}
+
+.match-map {
+  color: #B3B8C2;
 }
 
 .match-separator {
@@ -3795,7 +3798,7 @@ a {
 }
 
 .server-current {
-  color: var(--accent-secondary);
+  color: var(--accent-primary);
   font-weight: 600;
 }
 
@@ -4297,11 +4300,28 @@ html.nav-intro-preload .template-nav .sound {
 
 /* Right-hand template nav buttons: default frosted glass styling */
 .template-nav .nav-col:last-child .nav-button {
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: transparent;
   background-image: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  color: #fff;
+  overflow: hidden;
+}
+
+.template-nav .nav-col:last-child .nav-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  color: #fff;
+  z-index: 0;
+  transition: background-color .2s ease-out, -webkit-backdrop-filter .2s ease-out, backdrop-filter .2s ease-out;
+}
+
+.template-nav .nav-col:last-child .nav-button > * {
+  position: relative;
+  z-index: 1;
 }
 
 .template-nav .nav-col:last-child .nav-button .button-txt,
@@ -4358,8 +4378,13 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button:hover,
 .template-nav .nav-col:last-child .nav-button:focus-visible,
 .template-nav .nav-col:last-child .nav-button.is-active {
-  background-color: rgba(255, 255, 255, 0.9);
   color: #111;
+}
+
+.template-nav .nav-col:last-child .nav-button:hover::before,
+.template-nav .nav-col:last-child .nav-button:focus-visible::before,
+.template-nav .nav-col:last-child .nav-button.is-active::before {
+  background-color: rgba(255, 255, 255, 0.9);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
