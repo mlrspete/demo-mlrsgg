@@ -415,6 +415,8 @@ p {
 }
 
 .nav-button {
+  --nav-btn-bg: rgba(0, 0, 0, 0.55);
+  --nav-btn-blur: 10px;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -432,12 +434,67 @@ p {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-color: hsla(0, 0%, 100%, 0);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  background-color: transparent;
   color: #fff;
   font-size: 0.9rem;
   text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+}
+
+.nav-button:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--nav-btn-bg);
+  -webkit-backdrop-filter: blur(var(--nav-btn-blur));
+  backdrop-filter: blur(var(--nav-btn-blur));
+  z-index: 0;
+  -webkit-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
+}
+
+.nav-button > * {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-button .xsm-text {
+  color: #fff;
+}
+
+.nav-button .xsm-text.fade {
+  opacity: 1;
+}
+
+.nav-button .nav-icon {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 32px;
+  height: 32px;
+  color: inherit;
+}
+
+.nav-button .nav-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.nav-button:hover,
+.nav-button:focus-visible,
+.nav-button.is-active {
+  color: #0b0e11;
+}
+
+.nav-button:hover:before,
+.nav-button:focus-visible:before,
+.nav-button.is-active:before {
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .nav-button.size {
@@ -545,22 +602,24 @@ p {
   bottom: 0%;
   width: 100%;
   height: 100%;
-  background-color: #fff;
-  mix-blend-mode: difference;
+  background-color: transparent;
+  mix-blend-mode: normal;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .bg-whipe.blend {
   background-color: hsla(0, 0%, 100%, 0.05);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .bg-whipe.fade-over {
   z-index: 10;
   display: none;
   background-color: rgba(26, 26, 26, 0.7);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   mix-blend-mode: normal;
 }
 
