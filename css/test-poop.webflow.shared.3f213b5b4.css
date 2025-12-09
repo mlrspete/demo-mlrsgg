@@ -4140,9 +4140,6 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-button > * {
   position: relative;
   z-index: 2;
-  filter: none;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
 }
 
 .template-nav .nav-label {
@@ -4290,8 +4287,6 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .div-hide.intro {
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
 }
 
 .template-nav .div-hide.intro.hide {
@@ -4333,26 +4328,28 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .nav-col:last-child .nav-button .button-txt,
 .template-nav .nav-col:last-child .nav-button .xsm-text {
-  color: #fff;
   text-shadow: none;
-  filter: none;
 }
 
 .template-nav .nav-col:last-child .nav-button .xsm-text {
   color: #fff;
+  text-shadow: none;
 }
 
 .template-nav .nav-col:last-child .nav-button img {
   filter: none;
+  text-shadow: none;
 }
 
-.template-nav .nav-button .nav-icon {
-  position: relative;
-  z-index: 2;
-  display: block;
-  width: 32px;
-  height: 32px;
-  color: inherit;
+.template-nav .nav-col:last-child .nav-button .button-txt,
+.template-nav .nav-col:last-child .nav-button .xsm-text {
+  text-shadow: none;
+}
+
+.template-nav .nav-col:last-child .nav-button .button-txt,
+.template-nav .nav-col:last-child .nav-button .xsm-text {
+  filter: none;
+  text-shadow: none;
 }
 
 .template-nav .nav-button .nav-icon svg {
@@ -4365,9 +4362,6 @@ html.nav-intro-preload .template-nav .sound {
   .template-nav .nav-col:last-child .nav-button .bg-whipe {
     background-color: transparent;
     mix-blend-mode: normal;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    z-index: 1;
     pointer-events: none;
   }
 
@@ -4390,20 +4384,20 @@ html.nav-intro-preload .template-nav .sound {
   --nav-btn-bg: rgba(255, 255, 255, 0.85);
   --nav-btn-blur: 10px;
   background-color: transparent;
-  color: #0B0E11;
+  color: #0b0e11;
 }
 
 .template-nav .nav-col:last-child .nav-button:hover .xsm-text,
 .template-nav .nav-col:last-child .nav-button:focus-visible .xsm-text,
 .template-nav .nav-col:last-child .nav-button.is-active .xsm-text {
-  color: #0B0E11;
+  color: #0b0e11;
   text-shadow: none;
 }
 
 .template-nav .nav-col:last-child .nav-button:hover img,
 .template-nav .nav-col:last-child .nav-button:focus-visible img,
 .template-nav .nav-col:last-child .nav-button.is-active img {
-  filter: none;
+  filter: brightness(0) saturate(100%);
 }
 
 .template-nav .nav-col:last-child .nav-button .div-hide {
@@ -4441,16 +4435,12 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .bg-whipe.blend {
   background-color: hsla(0, 0%, 100%, 0.05);
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
 }
 
 .template-nav .bg-whipe.fade-over {
   z-index: 10;
   display: none;
   background-color: rgba(26, 26, 26, 0.7);
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
   mix-blend-mode: normal;
 }
 
