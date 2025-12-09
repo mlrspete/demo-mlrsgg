@@ -4410,6 +4410,18 @@ html.nav-intro-preload .template-nav .sound {
   text-align: center;
 }
 
+.template-nav .nav-col:last-child .nav-button .nav-icon {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+  color: inherit;
+  filter: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 .template-nav .bg-whipe {
   position: absolute;
   left: 0%;
