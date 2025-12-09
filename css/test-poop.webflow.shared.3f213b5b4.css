@@ -4365,6 +4365,19 @@ html.nav-intro-preload .template-nav .sound {
   transition: none;
   mix-blend-mode: difference;
 }
+.template-nav .nav-col:last-child .nav-button .nav-icon-img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(100%);
+  mix-blend-mode: normal;
+  transition: filter .2s ease;
+}
+.template-nav .nav-col:last-child .nav-button:hover .nav-icon-img,
+.template-nav .nav-col:last-child .nav-button:focus-visible .nav-icon-img,
+.template-nav .nav-col:last-child .nav-button.is-active .nav-icon-img {
+  filter: brightness(0) saturate(100%) invert(6%) sepia(5%) saturate(524%) hue-rotate(175deg) brightness(95%) contrast(93%);
+}
 
 /* Hover/active treatments for the right-hand template nav items */
 .template-nav .nav-col:last-child .nav-button:hover,
