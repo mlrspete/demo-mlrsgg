@@ -32,6 +32,14 @@ body {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("../fonts/BebasNeue-Regular.otf") format("opentype"), url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -2098,9 +2106,10 @@ textarea.w-input, textarea.w-select {
 
 body {
   color: #333;
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-family: "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 14px;
   line-height: 20px;
+  font-weight: 400;
 }
 
 a {
@@ -2117,7 +2126,8 @@ a {
   background-size: cover;
   justify-content: flex-start;
   align-items: stretch;
-  font-family: Rubik Mono One, sans-serif;
+  font-family: "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -3334,7 +3344,7 @@ a {
 
 .server-icon-label {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   color: #eef5ff;
   letter-spacing: .2em;
   opacity: .8;
@@ -3374,7 +3384,7 @@ a {
 .server-status-text {
   color: #f5f8ff;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: .26em;
 }
 
@@ -3382,7 +3392,7 @@ a {
   z-index: 2;
   color: #ffffff;
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: .14em;
   line-height: 120%;
   text-transform: uppercase;
@@ -4366,8 +4376,8 @@ html.nav-intro-preload .template-nav .sound {
   mix-blend-mode: difference;
 }
 .template-nav .nav-col:last-child .nav-button .nav-icon-img {
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
   display: block;
   filter: brightness(0) saturate(100%) invert(100%);
   mix-blend-mode: normal;
@@ -4448,8 +4458,8 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .nav-col:last-child .nav-button .nav-icon-img {
-  width: 54px;
-  height: 54px;
+  width: 44px;
+  height: 44px;
   display: inline-block;
   filter: none;
   mix-blend-mode: normal;
