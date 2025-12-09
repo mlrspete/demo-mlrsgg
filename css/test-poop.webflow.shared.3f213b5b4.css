@@ -4110,7 +4110,7 @@ html.nav-intro-preload .template-nav .sound {
 
 .template-nav .nav-button {
   --nav-btn-bg: hsla(0, 0%, 100%, 0.03);
-  --nav-btn-blur: 5px;
+  --nav-btn-blur: 10px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -4122,6 +4122,7 @@ html.nav-intro-preload .template-nav .sound {
   text-decoration: none;
   transition: opacity 2s ease 1.8s, background-color .2s ease-out, color .2s ease-out;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .template-nav .nav-button::before {
@@ -4345,6 +4346,22 @@ html.nav-intro-preload .template-nav .sound {
   filter: none;
 }
 
+.template-nav .nav-button .nav-icon {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 32px;
+  height: 32px;
+  color: inherit;
+}
+
+.template-nav .nav-button .nav-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
   .template-nav .nav-col:last-child .nav-button .bg-whipe {
     background-color: transparent;
     mix-blend-mode: normal;
@@ -4386,7 +4403,7 @@ html.nav-intro-preload .template-nav .sound {
 .template-nav .nav-col:last-child .nav-button:hover img,
 .template-nav .nav-col:last-child .nav-button:focus-visible img,
 .template-nav .nav-col:last-child .nav-button.is-active img {
-  filter: invert(1) brightness(0.1);
+  filter: none;
 }
 
 .template-nav .nav-col:last-child .nav-button .div-hide {
@@ -4416,22 +4433,24 @@ html.nav-intro-preload .template-nav .sound {
   bottom: 0%;
   width: 100%;
   height: 100%;
-  background-color: #fff;
-  mix-blend-mode: difference;
+  background-color: transparent;
+  mix-blend-mode: normal;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .template-nav .bg-whipe.blend {
   background-color: hsla(0, 0%, 100%, 0.05);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .template-nav .bg-whipe.fade-over {
   z-index: 10;
   display: none;
   background-color: rgba(26, 26, 26, 0.7);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   mix-blend-mode: normal;
 }
 
