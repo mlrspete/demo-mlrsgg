@@ -4434,6 +4434,23 @@ html.nav-intro-preload .template-nav .sound {
   backdrop-filter: none;
 }
 
+.template-nav .nav-col:last-child .nav-button .nav-icon-img {
+  width: 54px;
+  height: 54px;
+  display: inline-block;
+  filter: none;
+  mix-blend-mode: normal;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transition: filter 200ms ease;
+}
+
+.template-nav .nav-col:last-child .nav-button:hover .nav-icon-img,
+.template-nav .nav-col:last-child .nav-button:focus-visible .nav-icon-img,
+.template-nav .nav-col:last-child .nav-button.is-active .nav-icon-img {
+  filter: brightness(0) saturate(100%) invert(6%) sepia(6%) saturate(850%) hue-rotate(180deg) brightness(94%) contrast(94%);
+}
+
 .template-nav .bg-whipe {
   position: absolute;
   left: 0%;
