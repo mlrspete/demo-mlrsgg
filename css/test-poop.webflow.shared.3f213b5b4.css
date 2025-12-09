@@ -3797,6 +3797,7 @@ a {
 .server-current {
   color: var(--accent-primary);
   font-weight: 600;
+  text-shadow: 0 0 12px rgba(77, 208, 255, 0.4);
 }
 
 .server-max {
@@ -4104,18 +4105,36 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .nav-button {
+  --nav-btn-bg: hsla(0, 0%, 100%, 0.03);
+  --nav-btn-blur: 5px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
-  background-color: hsla(0, 0%, 100%, 0.03);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  background-color: transparent;
   color: #fff;
   font-size: .9rem;
   text-decoration: none;
   transition: opacity 2s ease 1.8s, background-color .2s ease-out, color .2s ease-out;
+  overflow: hidden;
+}
+
+.template-nav .nav-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--nav-btn-bg);
+  -webkit-backdrop-filter: blur(var(--nav-btn-blur));
+  backdrop-filter: blur(var(--nav-btn-blur));
+  transition: inherit;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.template-nav .nav-button > * {
+  position: relative;
+  z-index: 1;
 }
 
 .template-nav .nav-label {
@@ -4135,10 +4154,10 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .nav-button.bg {
+  --nav-btn-bg: hsla(0, 0%, 100%, 0.04);
   width: 33.3333333%;
   min-width: 33.3333333%;
   flex: 0 auto;
-  background-color: hsla(0, 0%, 100%, 0.04);
 }
 
 .template-nav .border-line-top {
