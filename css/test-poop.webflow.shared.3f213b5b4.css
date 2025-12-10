@@ -4376,8 +4376,8 @@ html.nav-intro-preload .template-nav .sound {
   mix-blend-mode: difference;
 }
 .template-nav .nav-col:last-child .nav-button .nav-icon-img {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   display: block;
   filter: brightness(0) saturate(100%) invert(100%);
   mix-blend-mode: normal;
@@ -4458,8 +4458,8 @@ html.nav-intro-preload .template-nav .sound {
 }
 
 .template-nav .nav-col:last-child .nav-button .nav-icon-img {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   display: inline-block;
   filter: none;
   mix-blend-mode: normal;
@@ -4834,6 +4834,6 @@ p,
 }
 
 .template-nav .nav-col:last-child .nav-button .nav-icon-img {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
 }
